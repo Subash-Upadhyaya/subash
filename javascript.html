@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript | Subash Upadhyaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fullstack.html">Full Stack</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="bootstrap.html" >Bootstrap</a></li>
+      <li><a href="javascript.html" class="active">JavaScript</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
+  </div>
+</nav>
+
+<section class="topic-hero">
+  <div class="topic-hero-bg">JS</div>
+  <div class="topic-hero-inner">
+    <div class="topic-breadcrumb"><a href="index.html">Home</a> / JavaScript</div>
+    <div class="section-label" style="color:var(--js-c)">Programming Language</div>
+    <h1><span style="color:var(--js-c)">JavaScript</span> — The Language of the Web</h1>
+    <p>JavaScript makes webpages interactive and dynamic. It's the only programming language that runs natively in every browser — and now on servers too, via Node.js.</p>
+  </div>
+</section>
+
+<main class="topic-body">
+  <div class="two-col">
+    <!-- LEFT -->
+    <div class="content-block">
+      <h2>What is JavaScript?</h2>
+      <p>JavaScript (JS) is a full programming language — unlike HTML and CSS, it can make decisions, perform calculations, loop through data, and communicate with servers.</p>
+      <p>It runs <strong>in the browser</strong> to control the page, and also <strong>on the server</strong> via Node.js. One language for the entire web stack.</p>
+
+      <h3>Core Concepts at a Glance</h3>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <div class="cc-icon">📦</div>
+          <div class="cc-title">Variables &amp; Types</div>
+          <div class="cc-desc"><code style="color:var(--js-c)">let</code> and <code style="color:var(--js-c)">const</code> store values. Types include strings, numbers, booleans, arrays, and objects.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">🔁</div>
+          <div class="cc-title">Functions &amp; Loops</div>
+          <div class="cc-desc">Reusable code blocks. <code style="color:var(--js-c)">for</code>, <code style="color:var(--js-c)">while</code>, and <code style="color:var(--js-c)">.forEach()</code> repeat tasks over data.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">🌳</div>
+          <div class="cc-title">DOM Manipulation</div>
+          <div class="cc-desc">Select any element with <code style="color:var(--js-c)">querySelector()</code>, change its text, style, or classes. Add or remove elements on the fly.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">🖱</div>
+          <div class="cc-title">Events</div>
+          <div class="cc-desc">Respond to user actions: <code style="color:var(--js-c)">click</code>, <code style="color:var(--js-c)">input</code>, <code style="color:var(--js-c)">keydown</code>, <code style="color:var(--js-c)">submit</code>. Attach them with <code style="color:var(--js-c)">addEventListener()</code>.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">📋</div>
+          <div class="cc-title">Arrays &amp; Objects</div>
+          <div class="cc-desc">Arrays store lists; objects store key-value pairs. Most data in real apps is one of these two structures.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">⏳</div>
+          <div class="cc-title">Async &amp; Fetch</div>
+          <div class="cc-desc"><code style="color:var(--js-c)">fetch()</code> loads data from APIs. <code style="color:var(--js-c)">async/await</code> lets you handle it without messy callbacks.</div>
+        </div>
+      </div>
+
+      <h3>The Fetch API — Talking to Servers</h3>
+      <p>Fetch is how JavaScript requests data from a back-end API without reloading the page. This is the core of modern web apps.</p>
+
+      <div class="code-snippet">
+<span class="comment">// Variables, functions, conditionals</span>
+<span class="kw">const</span> scores = [<span class="num">85</span>, <span class="num">92</span>, <span class="num">78</span>, <span class="num">96</span>];
+<span class="kw">const</span> avg = scores.<span class="fn">reduce</span>((a, b) => a + b) / scores.length;
+
+<span class="comment">// DOM manipulation</span>
+<span class="kw">const</span> el = document.<span class="fn">querySelector</span>(<span class="str">'#result'</span>);
+el.textContent = <span class="str">`Average: ${avg}`</span>;
+el.classList.<span class="fn">add</span>(<span class="str">'highlight'</span>);
+
+<span class="comment">// Event listener</span>
+document.<span class="fn">querySelector</span>(<span class="str">'button'</span>)
+  .<span class="fn">addEventListener</span>(<span class="str">'click'</span>, () => {
+    el.style.color = <span class="str">'gold'</span>;
+  });
+
+<span class="comment">// Fetch data from an API</span>
+<span class="kw">async function</span> <span class="fn">loadUser</span>() {
+  <span class="kw">const</span> res  = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/user'</span>);
+  <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+  console.<span class="fn">log</span>(data.name);
+}
+      </div>
+    </div>
+
+    <!-- RIGHT: DEMO -->
+    <div>
+      <div class="demo-box">
+        <div class="demo-header">
+          <div class="tc-icon js-icon" style="width:30px;height:30px;font-size:0.75rem;border-radius:8px">JS</div>
+          <h3>Random Number Generator — Live Demo</h3>
+          <span class="demo-badge">Interactive</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.82rem;margin-bottom:0.5rem">Set your range then generate — watch the DOM update in real time:</p>
+          <div class="js-number-display" id="numDisplay">?</div>
+          <div class="js-controls">
+            <div class="js-input-group">
+              <label>Min:</label>
+              <input type="number" class="js-input" id="minVal" value="1"/>
+            </div>
+            <div class="js-input-group">
+              <label>Max:</label>
+              <input type="number" class="js-input" id="maxVal" value="100"/>
+            </div>
+            <button class="js-btn primary" onclick="generateNumber()">🎲 Generate</button>
+            <button class="js-btn" onclick="resetNum()">↺ Reset</button>
+          </div>
+          <div id="statsArea" style="display:none;margin-bottom:0.8rem">
+            <div style="display:flex;gap:0.55rem;flex-wrap:wrap">
+              <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.45rem 0.85rem;font-size:0.8rem">
+                <span style="color:var(--text2)">Count: </span><span id="countDisplay" style="color:var(--js-c);font-weight:700">0</span>
+              </div>
+              <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.45rem 0.85rem;font-size:0.8rem">
+                <span style="color:var(--text2)">Avg: </span><span id="avgDisplay" style="color:var(--js-c);font-weight:700">—</span>
+              </div>
+              <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.45rem 0.85rem;font-size:0.8rem">
+                <span style="color:var(--text2)">High: </span><span id="highDisplay" style="color:var(--js-c);font-weight:700">—</span>
+              </div>
+            </div>
+          </div>
+          <p style="color:var(--text2);font-size:0.78rem;margin-bottom:0.35rem">Generation log:</p>
+          <div class="js-history" id="historyLog">
+            <span style="color:var(--text2)">Results will appear here...</span>
+          </div>
+        </div>
+        <div class="demo-explanation">
+          <strong>How it works:</strong> <code>Math.random()</code> × range + min gives a decimal, then <code>Math.floor()</code> rounds it. Stats are tracked in an array using <code>reduce()</code>. The DOM updates via <code>textContent</code>.
+        </div>
+      </div>
+
+      <!-- Events demo -->
+      <div class="demo-box" style="margin-top:1.4rem">
+        <div class="demo-header">
+          <h3>DOM Events — Interactive Showcase</h3>
+          <span class="demo-badge">Events</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.82rem;margin-bottom:0.9rem">Hover, click, and type to see JavaScript event listeners in action:</p>
+          <div id="eventBox" style="background:var(--bg3);border:2px solid var(--border);border-radius:12px;padding:1.4rem;text-align:center;cursor:pointer;transition:all 0.3s;user-select:none;min-height:75px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.35rem">
+            <span id="eventMsg" style="font-family:'Space Mono',monospace;font-weight:700;font-size:1rem;color:var(--js-c)">Hover or click me!</span>
+            <span id="eventSub" style="font-size:0.75rem;color:var(--text2)">I respond to JavaScript events</span>
+          </div>
+          <div style="margin-top:0.8rem">
+            <input id="typeInput" type="text" placeholder="Type something here..."
+              style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.55rem 0.9rem;border-radius:8px;font-size:0.88rem;outline:none;"
+              oninput="handleType(this.value)"/>
+            <p id="typeOutput" style="color:var(--text2);font-size:0.78rem;margin-top:0.45rem;font-family:'Source Code Pro',monospace">event: waiting for input...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="nav-logo">SU<span class="dot">.</span></div>
+      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a href="html.html">HTML</a>
+      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </div>
+    <div class="footer-right"><p>📧 subashchalise064@gmail.com</p><p>📍 Chitwan, Nepal</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+let history = [], count = 0, total = 0, high = -Infinity;
+function generateNumber() {
+  const min = parseInt(document.getElementById('minVal').value) || 1;
+  const max = parseInt(document.getElementById('maxVal').value) || 100;
+  if (min >= max) {
+    document.getElementById('numDisplay').textContent = '⚠';
+    document.getElementById('historyLog').innerHTML = '<span style="color:#ff7b72">Min must be less than Max!</span>';
+    return;
+  }
+  const result = Math.floor(Math.random() * (max - min + 1) + min);
+  count++; total += result; if (result > high) high = result;
+  history.unshift(result); if (history.length > 8) history.pop();
+  const display = document.getElementById('numDisplay');
+  display.textContent = result;
+  display.classList.remove('number-bounce'); void display.offsetWidth; display.classList.add('number-bounce');
+  document.getElementById('statsArea').style.display = 'block';
+  document.getElementById('countDisplay').textContent = count;
+  document.getElementById('avgDisplay').textContent = (total / count).toFixed(1);
+  document.getElementById('highDisplay').textContent = high;
+  document.getElementById('historyLog').innerHTML = history.map((n, i) =>
+    `<span style="color:var(--text2)">#${count-i}: </span><span style="color:var(--js-c)">${n}</span>   `
+  ).join('');
+}
+function resetNum() {
+  history = []; count = 0; total = 0; high = -Infinity;
+  document.getElementById('numDisplay').textContent = '?';
+  document.getElementById('statsArea').style.display = 'none';
+  document.getElementById('historyLog').innerHTML = '<span style="color:var(--text2)">Results will appear here...</span>';
+}
+const box = document.getElementById('eventBox');
+const msg = document.getElementById('eventMsg');
+const sub = document.getElementById('eventSub');
+box.addEventListener('mouseover', () => {
+  box.style.borderColor = 'var(--js-c)'; box.style.background = 'rgba(245,200,66,0.05)';
+  msg.textContent = '👋 Hovering!'; sub.textContent = 'event: mouseover';
+});
+box.addEventListener('mouseout', () => {
+  box.style.borderColor = 'var(--border)'; box.style.background = 'var(--bg3)';
+  msg.textContent = 'Hover or click me!'; sub.textContent = 'I respond to JavaScript events';
+});
+box.addEventListener('click', () => {
+  const msgs = ['🎉 Clicked!', '⚡ Got it!', '🚀 Nice click!', '✨ JavaScript!'];
+  msg.textContent = msgs[Math.floor(Math.random() * msgs.length)];
+  sub.textContent = 'event: click';
+  box.style.transform = 'scale(0.97)'; setTimeout(() => box.style.transform = '', 150);
+});
+function handleType(val) {
+  const out = document.getElementById('typeOutput');
+  if (!val.length) { out.textContent = 'event: waiting for input...'; out.style.color = 'var(--text2)'; }
+  else { out.innerHTML = `event: <span style="color:var(--js-c)">oninput</span> → value = "<span style="color:#c3e88d">${val}</span>" (length: ${val.length})`; }
+}
+</script>
+</body>
+</html>

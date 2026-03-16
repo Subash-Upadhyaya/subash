@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subash Upadhyaya | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="fullstack.html">Full Stack</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="bootstrap.html">Bootstrap</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Full Stack Developer</div>
+    <h1 class="hero-name">Subash<span class="line2">Upadhyaya</span></h1>
+    <p class="hero-tagline">Building seamless web experiences — from pixel-perfect interfaces to robust server-side logic.</p>
+    <div class="hero-chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">Bootstrap</span>
+      <span class="chip">JavaScript</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#sections" class="btn-primary">Explore Portfolio →</a>
+      <a href="#about" class="btn-ghost">About Me</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-card">
+      <div class="code-dots"><span></span><span></span><span></span></div>
+      <pre><code><span class="c-kw">const</span> <span class="c-key">developer</span> = {
+  name:  <span class="c-str">"Subash Upadhyaya"</span>,
+  role:  <span class="c-str">"Full Stack Dev"</span>,
+  stack: [
+    <span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"Bootstrap"</span>,
+    <span class="c-str">"JavaScript"</span>
+  ],
+  location: <span class="c-str">"Chitwan, Nepal 🇳🇵"</span>,
+  passion: <span class="c-str">"Building the web"</span>  <span class="c-comment">// ✦</span>
+};</code></pre>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="stat"><span class="stat-num">5</span><span class="stat-label">Topics Covered</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">5</span><span class="stat-label">Live Demos</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Responsive</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">MERN</span><span class="stat-label">Stack</span></div>
+</section>
+
+<!-- FULL STACK SECTION -->
+<section class="fullstack-section" id="about">
+  <div class="container">
+    <div class="section-label">Core Concept</div>
+    <h2 class="section-title">What is Full Stack<br/><span class="accent">Development?</span></h2>
+    <div class="fullstack-grid">
+      <div class="fs-text">
+        <p>A full stack developer works on <strong>every layer</strong> of a web application — the front end users see, the back end that processes data, and the database that stores it all.</p>
+        <p>Think of building a restaurant: the <strong>front end</strong> is the dining room, the <strong>back end</strong> is the kitchen, and the <strong>database</strong> is the pantry. A full stack developer designs and runs all three.</p>
+        <div class="fs-layers">
+          <div class="layer layer-fe">
+            <span class="layer-icon">🖥</span>
+            <div><strong>Front End</strong><small>HTML · CSS · JavaScript · Bootstrap</small></div>
+          </div>
+          <div class="layer layer-be">
+            <span class="layer-icon">⚙️</span>
+            <div><strong>Back End</strong><small>Node.js · Express · PHP · Python</small></div>
+          </div>
+          <div class="layer layer-db">
+            <span class="layer-icon">🗄</span>
+            <div><strong>Database</strong><small>MongoDB · MySQL · PostgreSQL</small></div>
+          </div>
+        </div>
+        <p class="stack-note">Stacks like <strong>MERN</strong> (MongoDB, Express, React, Node) use JavaScript throughout the entire product — one language, front to back.</p>
+      </div>
+      <div class="fs-diagram">
+        <div class="diagram-tower">
+          <div class="dt-layer dt-client"><span>🌐 Client / Browser</span><small>What the user sees and interacts with</small></div>
+          <div class="dt-arrow">↕</div>
+          <div class="dt-layer dt-server"><span>⚡ Server / API</span><small>Receives requests, runs business logic</small></div>
+          <div class="dt-arrow">↕</div>
+          <div class="dt-layer dt-db"><span>🗃 Database</span><small>Stores and retrieves persistent data</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC CARDS -->
+<section class="sections-grid" id="sections">
+  <div class="container">
+    <div class="section-label">Explore Topics</div>
+    <h2 class="section-title">Module <span class="accent">Topics</span></h2>
+    <p class="section-sub">Click any card to explore a topic in depth with explanations, examples, and a live interactive demo.</p>
+    <div class="topic-grid">
+
+        <div class="topic-card" data-topic="fullstack">
+        <div class="tc-top">
+          <div class="tc-icon fs-icon">FS</div>
+          <span class="tc-tag">Architecture</span>
+        </div>
+        <h3>Full Stack</h3>
+        <p>Connect front end and back end: HTTP requests, REST APIs, Node.js servers, databases, and deployment.</p>
+        <div class="tc-demo-hint">🚀 Live: Request/response flow simulator</div>
+        <a href="fullstack.html" class="btn-explore">Explore <span>→</span></a>
+      </div>
+
+      <div class="topic-card" data-topic="html">
+        <div class="tc-top">
+          <div class="tc-icon html-icon">&lt;/&gt;</div>
+          <span class="tc-tag">Markup</span>
+        </div>
+        <h3>HTML</h3>
+        <p>Structure every webpage with elements, attributes, semantic tags, forms, and links. The foundation of the web.</p>
+        <div class="tc-demo-hint">🔧 Live: Build & preview HTML elements in real time</div>
+        <a href="html.html" class="btn-explore">Explore <span>→</span></a>
+      </div>
+
+      <div class="topic-card" data-topic="css">
+        <div class="tc-top">
+          <div class="tc-icon css-icon">#</div>
+          <span class="tc-tag">Styling</span>
+        </div>
+        <h3>CSS</h3>
+        <p>Style, layout and animate pages using selectors, flexbox, grid, the box model, and responsive media queries.</p>
+        <div class="tc-demo-hint">🎨 Live: Interactive theme colour picker</div>
+        <a href="css.html" class="btn-explore">Explore <span>→</span></a>
+      </div>
+
+      <div class="topic-card" data-topic="bootstrap">
+        <div class="tc-top">
+          <div class="tc-icon bs-icon">B</div>
+          <span class="tc-tag">Framework</span>
+        </div>
+        <h3>Bootstrap</h3>
+        <p>Build responsive layouts fast with Bootstrap's grid, utility classes, components, and mobile-first approach.</p>
+        <div class="tc-demo-hint">📐 Live: Dynamic 12-column grid visualiser</div>
+        <a href="bootstrap.html" class="btn-explore">Explore <span>→</span></a>
+      </div>
+
+      <div class="topic-card" data-topic="js">
+        <div class="tc-top">
+          <div class="tc-icon js-icon">JS</div>
+          <span class="tc-tag">Programming</span>
+        </div>
+        <h3>JavaScript</h3>
+        <p>Add interactivity with variables, functions, DOM manipulation, events, arrays, objects, and async requests.</p>
+        <div class="tc-demo-hint">🎲 Live: Random number generator & DOM events</div>
+        <a href="javascript.html" class="btn-explore">Explore <span>→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="nav-logo">SU<span class="dot">.</span></div>
+      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a href="html.html">HTML</a>
+      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </div>
+    <div class="footer-right">
+      <p>📧 subashchalise064@gmail.com</p>
+      <p>📍 Chitwan, Nepal</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
