@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS | Subash Upadhyaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .topic-hero::before {
+      content: 'CSS';
+      position: absolute; right: 4rem; top: 50%; transform: translateY(-50%);
+      font-family: 'Space Mono',monospace; font-weight: 900; font-size: 10rem;
+      color: rgba(38,77,228,0.07); letter-spacing: -8px; pointer-events: none;
+    }
+    .topic-hero { position: relative; overflow: hidden; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html" class="active">CSS</a></li>
+      <li><a href="bootstrap.html">Bootstrap</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="topic-hero">
+  <div class="topic-hero-inner">
+    <div class="topic-breadcrumb"><a href="index.html">Home</a> / CSS</div>
+    <div class="section-label" style="color:#5b7cf7">Styling Language</div>
+    <h1>Cascading <span style="color:#5b7cf7">Style</span> Sheets</h1>
+    <p>Without CSS, the web would be plain black text on a white background. CSS is what gives every webpage its visual identity, layout, and life.</p>
+  </div>
+</section>
+
+<main class="topic-body">
+  <div class="two-col">
+    <!-- LEFT: EXPLANATION -->
+    <div class="content-block">
+      <h2>What is CSS?</h2>
+      <p>CSS stands for <strong>Cascading Style Sheets</strong> and it controls how HTML elements look on screen. It handles colours, fonts, spacing, layout, and even animations.</p>
+      <p>The "Cascading" part means styles can be applied from multiple sources, and when they conflict, the browser follows a set of rules (specificity and order) to decide which one wins.</p>
+
+      <div class="info-box">
+        <h4>Three Ways to Apply CSS</h4>
+        <ul>
+          <li><strong>Inline</strong> — directly on an element using the <code style="font-family:'Source Code Pro',monospace;color:#5b7cf7">style=""</code> attribute</li>
+          <li><strong>Internal</strong> — inside a <code style="font-family:'Source Code Pro',monospace;color:#5b7cf7">&lt;style&gt;</code> tag in the HTML <code style="font-family:'Source Code Pro',monospace;color:#5b7cf7">&lt;head&gt;</code></li>
+          <li><strong>External</strong> — a separate <code style="font-family:'Source Code Pro',monospace;color:#5b7cf7">.css</code> file linked with <code style="font-family:'Source Code Pro',monospace;color:#5b7cf7">&lt;link&gt;</code></li>
+        </ul>
+      </div>
+
+      <h2>The Box Model</h2>
+      <p>Every HTML element is a rectangular box. The CSS box model describes the layers around content: <strong>padding</strong>, <strong>border</strong>, and <strong>margin</strong>. Understanding this is essential for creating precise layouts.</p>
+
+      <div class="code-snippet">
+<span class="comment">/* CSS Selector & Rule */</span>
+<span class="tag">h1</span> {
+  <span class="attr">color</span>: <span class="val">#264de4</span>;
+  <span class="attr">font-size</span>: <span class="val">2rem</span>;
+  <span class="attr">margin-bottom</span>: <span class="val">1rem</span>;
+}
+
+<span class="comment">/* Class selector */</span>
+<span class="tag">.card</span> {
+  <span class="attr">background</span>: <span class="val">#fff</span>;
+  <span class="attr">border-radius</span>: <span class="val">12px</span>;
+  <span class="attr">padding</span>: <span class="val">1.5rem</span>;
+  <span class="attr">box-shadow</span>: <span class="val">0 4px 20px rgba(0,0,0,0.1)</span>;
+}
+
+<span class="comment">/* Flexbox layout */</span>
+<span class="tag">.container</span> {
+  <span class="attr">display</span>: <span class="val">flex</span>;
+  <span class="attr">justify-content</span>: <span class="val">space-between</span>;
+  <span class="attr">align-items</span>: <span class="val">center</span>;
+}
+      </div>
+
+      <div class="info-box" style="margin-top:1rem">
+        <h4>Key CSS Properties</h4>
+        <ul>
+          <li><strong>color / background-color</strong> — text and background colours</li>
+          <li><strong>font-size / font-family</strong> — typography control</li>
+          <li><strong>display: flex / grid</strong> — powerful layout systems</li>
+          <li><strong>transition / animation</strong> — smooth visual changes</li>
+          <li><strong>media queries</strong> — responsive design for different screens</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: DEMO -->
+    <div>
+      <div class="demo-box">
+        <div class="demo-header">
+          <div class="tc-icon css-icon" style="width:32px;height:32px;font-size:1.1rem;border-radius:8px">#</div>
+          <h3>CSS Theme Colour Picker — Live Demo</h3>
+          <span class="demo-badge">Interactive</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1rem">Click a colour palette to apply CSS background, text and accent properties to the preview card below:</p>
+
+          <!-- Swatches -->
+          <div class="color-swatch-grid" id="swatchGrid">
+            <div class="swatch active" style="background:#1a1a2e" onclick="applyTheme('#1a1a2e','#e8e8f0','#f0c040','Midnight Dark','Dark background with golden accent')" title="Midnight Dark"></div>
+            <div class="swatch" style="background:#0077b6" onclick="applyTheme('#0077b6','#ffffff','#90e0ef','Ocean Blue','Deep ocean blue theme')" title="Ocean Blue"></div>
+            <div class="swatch" style="background:#2d6a4f" onclick="applyTheme('#2d6a4f','#ffffff','#95d5b2','Forest Green','Nature-inspired green theme')" title="Forest"></div>
+            <div class="swatch" style="background:#d62828" onclick="applyTheme('#d62828','#ffffff','#fcbf49','Crimson Red','Bold red and amber theme')" title="Crimson"></div>
+            <div class="swatch" style="background:#7209b7" onclick="applyTheme('#7209b7','#ffffff','#f72585','Electric Purple','Vibrant purple-pink theme')" title="Electric"></div>
+            <div class="swatch" style="background:#f4a261" onclick="applyTheme('#f4a261','#2d1b0e','#e76f51','Warm Sunset','Warm orange sunset theme')" title="Sunset"></div>
+            <div class="swatch" style="background:#264653" onclick="applyTheme('#264653','#e9f5f5','#2a9d8f','Deep Teal','Rich teal and mint theme')" title="Deep Teal"></div>
+            <div class="swatch" style="background:#3d405b" onclick="applyTheme('#3d405b','#f2f4f3','#e07a5f','Terracotta','Muted purple and terracotta')" title="Terracotta"></div>
+            <div class="swatch" style="background:#f1faee" onclick="applyTheme('#f1faee','#1d3557','#457b9d','Clean Light','Light minimal theme')" title="Light"></div>
+            <div class="swatch" style="background:#03071e" onclick="applyTheme('#03071e','#ffba08','#f48c06','Amber Night','Dark with amber typography')" title="Amber Night"></div>
+          </div>
+
+          <!-- Preview Card -->
+          <div class="css-preview-box" id="cssPreview" style="background:#1a1a2e;color:#e8e8f0">
+            <h4 id="previewTitle" style="color:#f0c040">Midnight Dark</h4>
+            <p id="previewDesc">Dark background with golden accent. This preview updates in real time as you select a colour palette above.</p>
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:1rem;flex-wrap:wrap">
+              <div id="previewBtn" style="background:#f0c040;color:#1a1a2e;padding:6px 16px;border-radius:8px;font-size:0.82rem;font-weight:700">Button</div>
+              <div style="border:2px solid #f0c040;padding:6px 16px;border-radius:8px;font-size:0.82rem;font-weight:600;color:#f0c040" id="previewOutline">Outline</div>
+            </div>
+          </div>
+
+          <!-- Live CSS Output -->
+          <p style="color:var(--muted);font-size:0.8rem;margin-bottom:0.4rem">Generated CSS:</p>
+          <div class="prop-display" id="propDisplay">
+            <span class="prop-tag">background: #1a1a2e</span>
+            <span class="prop-tag">color: #e8e8f0</span>
+            <span class="prop-tag">accent: #f0c040</span>
+          </div>
+        </div>
+        <div class="demo-explanation">
+          <strong>How it works:</strong> Clicking a swatch calls a JavaScript function that updates the <code>style</code> property of the preview element — simulating how CSS <code>background-color</code>, <code>color</code>, and <code>border-color</code> cascade onto a component. This is exactly how CSS custom properties (variables) and dynamic theming work in real applications.
+        </div>
+      </div>
+
+      <!-- BOX MODEL VISUAL -->
+      <div class="demo-box" style="margin-top:1.5rem">
+        <div class="demo-header">
+          <h3>The CSS Box Model — Visual</h3>
+        </div>
+        <div class="demo-area" style="display:flex;justify-content:center">
+          <div style="text-align:center">
+            <div style="background:rgba(38,77,228,0.15);border:2px dashed #5b7cf7;border-radius:8px;padding:12px;display:inline-block;position:relative">
+              <div style="font-size:0.7rem;color:#5b7cf7;margin-bottom:6px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">margin</div>
+              <div style="background:rgba(38,77,228,0.25);border:2px solid #5b7cf7;border-radius:6px;padding:10px">
+                <div style="font-size:0.7rem;color:#a0b4ff;margin-bottom:5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">border</div>
+                <div style="background:rgba(38,77,228,0.2);border-radius:4px;padding:10px">
+                  <div style="font-size:0.7rem;color:#c0d0ff;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">padding</div>
+                  <div style="background:#5b7cf7;border-radius:4px;padding:12px 24px">
+                    <span style="color:#fff;font-weight:700;font-size:0.85rem">CONTENT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="nav-logo">SU<span class="dot">.</span></div>
+      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="html.html">HTML</a>
+      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </div>
+    <div class="footer-right"><p>📧subashchalise064@gmail.com</p><p>📍 Chitwan, Nepal</p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Subash Upadhyaya. All rights reserved.</p></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function applyTheme(bg, text, accent, name, desc) {
+  const preview = document.getElementById('cssPreview');
+  const title = document.getElementById('previewTitle');
+  const pdesc = document.getElementById('previewDesc');
+  const btn = document.getElementById('previewBtn');
+  const outline = document.getElementById('previewOutline');
+  const propDisplay = document.getElementById('propDisplay');
+
+  preview.style.background = bg;
+  preview.style.color = text;
+  title.style.color = accent;
+  title.textContent = name;
+  pdesc.textContent = desc + '. This preview updates in real time as you select a colour palette above.';
+  btn.style.background = accent;
+  btn.style.color = bg;
+  outline.style.borderColor = accent;
+  outline.style.color = accent;
+
+  propDisplay.innerHTML = `
+    <span class="prop-tag">background: ${bg}</span>
+    <span class="prop-tag">color: ${text}</span>
+    <span class="prop-tag">accent: ${accent}</span>
+  `;
+
+  // Update active swatch
+  document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
