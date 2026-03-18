@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML | Subash Upadhyaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fullstack.html">Full Stack</a></li>
+      <li><a href="html.html" class="active">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="bootstrap.html">Bootstrap</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="about.html">About</a></li>
+      
+    </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
+  </div>
+</nav>
+
+<section class="topic-hero">
+  <div class="topic-hero-bg">HTML</div>
+  <div class="topic-hero-inner">
+    <div class="topic-breadcrumb"><a href="index.html">Home</a> / HTML</div>
+    <div class="section-label" style="color:var(--html-c)">Markup Language</div>
+    <h1>HyperText <span style="color:var(--html-c)">Markup</span> Language</h1>
+    <p>The skeleton of every webpage. HTML provides structure using elements and tags — it is the starting point for everything you see on the web.</p>
+  </div>
+</section>
+
+<main class="topic-body">
+  <div class="two-col">
+    <!-- LEFT -->
+    <div class="content-block">
+      <h2>What is HTML?</h2>
+      <p>HTML (HyperText Markup Language) is the standard language used to create the structure of webpages. It tells the browser <em>what</em> to display such as headings, paragraphs, images, links, forms, and more.</p>
+      <p>HTML is not a programming language meaning it doesn't do calculations or make decisions. It's a <strong>markup language</strong> that annotates content so the browser knows how to present it.</p>
+
+      <h3>Core Concepts at a Glance</h3>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <div class="cc-icon">🏷</div>
+          <div class="cc-title">Tags &amp; Elements</div>
+          <div class="cc-desc">Elements are defined with opening and closing tags like <code style="color:var(--html-c)">&lt;p&gt;...&lt;/p&gt;</code>. Some are self-closing like <code style="color:var(--html-c)">&lt;img/&gt;</code>.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">🔗</div>
+          <div class="cc-title">Attributes</div>
+          <div class="cc-desc">Extra information added inside the tag: <code style="color:var(--html-c)">href</code>, <code style="color:var(--html-c)">src</code>, <code style="color:var(--html-c)">class</code>, <code style="color:var(--html-c)">id</code>. They give elements meaning and behaviour.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">🌳</div>
+          <div class="cc-title">DOM Tree</div>
+          <div class="cc-desc">The browser turns HTML into a tree of objects (the DOM). JavaScript reads and modifies this tree to make pages dynamic.</div>
+        </div>
+        <div class="concept-card">
+          <div class="cc-icon">♿</div>
+          <div class="cc-title">Semantic HTML</div>
+          <div class="cc-desc">Tags like <code style="color:var(--html-c)">&lt;header&gt;</code>, <code style="color:var(--html-c)">&lt;nav&gt;</code>, <code style="color:var(--html-c)">&lt;article&gt;</code> describe meaning, helping screen readers and search engines.</div>
+        </div>
+      </div>
+
+      <h3>Forms &amp; User Input</h3>
+      <p>Forms are how users send data to a server like logins, sign-ups, search bars and more. The <code style="color:var(--html-c)">&lt;form&gt;</code> element wraps inputs, selects, checkboxes, and a submit button.</p>
+
+      <h3>Links &amp; Navigation</h3>
+      <p>The <code style="color:var(--html-c)">&lt;a href=""&gt;</code> (anchor) tag creates hyperlinks which is the fundamental mechanism of the web. Relative links navigate within a site; absolute links point anywhere on the internet.</p>
+
+      <div class="code-snippet">
+<span class="comment">&lt;!-- Page structure --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>My Page<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;header&gt;</span>
+      <span class="tag">&lt;nav&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"/"</span><span class="tag">&gt;</span>Home<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/nav&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+    <span class="tag">&lt;main&gt;</span>
+      <span class="tag">&lt;h1&gt;</span>Hello World!<span class="tag">&lt;/h1&gt;</span>
+      <span class="tag">&lt;p&gt;</span>A paragraph of text.<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"photo.jpg"</span> <span class="attr">alt</span>=<span class="val">"A photo"</span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+      </div>
+
+      <div class="info-box">
+        <h4>📋 Quick-Reference: Common HTML Tags</h4>
+        <ul>
+          <li><strong>&lt;h1&gt;–&lt;h6&gt;</strong> — Headings, h1 is most important</li>
+          <li><strong>&lt;p&gt;</strong> — Paragraph of text</li>
+          <li><strong>&lt;a href=""&gt;</strong> — Hyperlink</li>
+          <li><strong>&lt;img src="" alt=""&gt;</strong> — Image</li>
+          <li><strong>&lt;ul&gt; / &lt;ol&gt;</strong> — Unordered / Ordered list</li>
+          <li><strong>&lt;div&gt; / &lt;span&gt;</strong> — Generic block / inline container</li>
+          <li><strong>&lt;form&gt;, &lt;input&gt;, &lt;button&gt;</strong> — User input</li>
+          <li><strong>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;</strong> — Semantic layout</li>
+          <li><strong>&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;</strong> — Tabular data</li>
+          <li><strong>&lt;video&gt;, &lt;audio&gt;</strong> — Media embeds</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: DEMO -->
+    <div>
+      <div class="demo-box">
+        <div class="demo-header">
+          <div class="tc-icon html-icon" style="width:30px;height:30px;font-size:0.75rem;border-radius:8px">&lt;/&gt;</div>
+          <h3>HTML Tag Builder — Live Demo</h3>
+          <span class="demo-badge">Interactive</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.82rem;margin-bottom:0.8rem">Click buttons to insert HTML elements and see them render live:</p>
+          <div class="html-preview" id="htmlPreview">
+            <p style="color:#aaa;font-style:italic;font-family:sans-serif">Click buttons below to add elements here...</p>
+          </div>
+          <div class="html-controls">
+            <button class="tag-btn" onclick="addTag('h1','Hello World!')">+ &lt;h1&gt;</button>
+            <button class="tag-btn" onclick="addTag('h3','Sub-Heading')">+ &lt;h3&gt;</button>
+            <button class="tag-btn" onclick="addTag('p','This is a paragraph of text. HTML gives it structure.')">+ &lt;p&gt;</button>
+            <button class="tag-btn" onclick="addLink()">+ &lt;a&gt; Link</button>
+            <button class="tag-btn" onclick="addTag('ul','<li>First item</li><li>Second item</li><li>Third item</li>')">+ &lt;ul&gt;</button>
+            <button class="tag-btn" onclick="addTag('blockquote','&ldquo;The web is for everyone.&rdquo; — Tim Berners-Lee')">+ &lt;blockquote&gt;</button>
+            <button class="tag-btn" onclick="addForm()">+ &lt;form&gt;</button>            
+            <button class="tag-btn" onclick="addHr()">+ &lt;hr&gt;</button>
+            <button class="clear-btn" onclick="clearPreview()">⟳ Clear</button>
+          </div>
+        </div>
+        <div class="demo-explanation">
+          <strong>How it works:</strong> Each button calls <code>document.createElement()</code> and <code>appendChild()</code> to insert a real HTML element into the preview — showing the DOM in action.
+        </div>
+      </div>
+
+      <!-- HTML5 semantic visual -->
+      <div class="demo-box" style="margin-top:1.4rem">
+        <div class="demo-header">
+          <h3>Semantic Page Structure — Visual</h3>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:1rem">This shows how a typical HTML5 page is structured using semantic elements:</p>
+          <div style="border:1.5px solid var(--border);border-radius:10px;overflow:hidden;font-size:0.75rem;font-family:'Source Code Pro',monospace">
+            <div style="background:rgba(255,107,53,0.12);border-bottom:1.5px solid var(--border);padding:0.55rem 0.9rem;color:var(--html-c);font-weight:700">&lt;header&gt; — Logo, navigation</div>
+            <div style="background:rgba(255,107,53,0.06);border-bottom:1.5px solid var(--border);padding:0.55rem 0.9rem;color:var(--text2);padding-left:1.8rem">&lt;nav&gt; — Menu links</div>
+            <div style="background:rgba(255,107,53,0.04);border-bottom:1.5px solid var(--border);padding:0.55rem 0.9rem;color:var(--html-c);font-weight:700">&lt;main&gt; — Primary content</div>
+            <div style="display:flex;border-bottom:1.5px solid var(--border)">
+              <div style="flex:2;background:rgba(255,107,53,0.06);border-right:1.5px solid var(--border);padding:0.55rem 0.9rem;color:var(--text2);padding-left:1.8rem">&lt;article&gt; — Blog post / main piece</div>
+              <div style="flex:1;background:rgba(255,107,53,0.04);padding:0.55rem 0.9rem;color:var(--text2);padding-left:1.2rem">&lt;aside&gt; — Sidebar</div>
+            </div>
+            <div style="background:rgba(255,107,53,0.12);padding:0.55rem 0.9rem;color:var(--html-c);font-weight:700">&lt;footer&gt; — Contact, copyright</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="nav-logo">SU<span class="dot">.</span></div>
+      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="fullstack.html">Full Stack</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="footer-right">
+      <p>📧 subashchalise064@gmail.com</p>
+      <p>📍 Chitwan, Nepal</p>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script>
+let previewEmpty = true;
+function addTag(tag, content) {
+  const preview = document.getElementById('htmlPreview');
+  if (previewEmpty) { preview.innerHTML = ''; previewEmpty = false; }
+  const el = document.createElement(tag);
+  el.innerHTML = content;
+  preview.appendChild(el);
+}
+function addLink() {
+  const preview = document.getElementById('htmlPreview');
+  if (previewEmpty) { preview.innerHTML = ''; previewEmpty = false; }
+  const a = document.createElement('a');
+  a.href = '#'; a.textContent = '🔗 This is a hyperlink — click me!';
+  a.style.color = '#ff6b35'; a.style.display = 'block'; a.style.margin = '4px 0';
+  preview.appendChild(a);
+}
+function addHr() {
+  const preview = document.getElementById('htmlPreview');
+  if (previewEmpty) { preview.innerHTML = ''; previewEmpty = false; }
+  const hr = document.createElement('hr');
+  hr.style.border = 'none'; hr.style.borderTop = '2px solid #ff6b35'; hr.style.margin = '8px 0';
+  preview.appendChild(hr);
+}
+function addForm() {
+  const preview = document.getElementById('htmlPreview');
+  if (previewEmpty) { preview.innerHTML = ''; previewEmpty = false; }
+  const wrap = document.createElement('div');
+  wrap.innerHTML = '<div style="border:1px solid #ccc;border-radius:8px;padding:10px;display:inline-block"><label style="display:block;font-size:0.85rem;margin-bottom:4px;font-family:sans-serif">Your name:</label><input type="text" placeholder="Type here..." style="border:1px solid #ccc;padding:4px 8px;border-radius:4px;font-size:0.85rem"/><button style="margin-left:6px;background:#ff6b35;color:#fff;border:none;padding:4px 10px;border-radius:4px;font-size:0.85rem;cursor:pointer">Submit</button></div>';
+  preview.appendChild(wrap);
+}
+function clearPreview() {
+  const preview = document.getElementById('htmlPreview');
+  preview.innerHTML = '<p style="color:#aaa;font-style:italic;font-family:sans-serif">Click buttons below to add elements here...</p>';
+  previewEmpty = true;
+}
+</script>
+</body>
+</html>
