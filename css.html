@@ -19,6 +19,8 @@
       <li><a href="css.html" class="active">CSS</a></li>
       <li><a href="bootstrap.html" >Bootstrap</a></li>
       <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="about.html">About</a></li>
+      
     </ul>
     <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
   </div>
@@ -40,7 +42,7 @@
     <div class="content-block">
       <h2>What is CSS?</h2>
       <p>CSS (Cascading Style Sheets) is the language used to style and lay out HTML elements. Without CSS, websites would be plain black text on a white background.</p>
-      <p>The <strong>"Cascading"</strong> part means multiple style rules can apply to one element — the browser follows rules of <em>specificity</em> and <em>order</em> to decide which one wins.</p>
+      <p>The <strong>"Cascading"</strong> part means multiple style rules can apply to one element and the browser follows rules of <em>specificity</em> and <em>order</em> to decide which one wins.</p>
 
       <h3>Key Concepts at a Glance</h3>
       <div class="concept-grid">
@@ -146,7 +148,7 @@
           </div>
         </div>
         <div class="demo-explanation">
-          <strong>How it works:</strong> Clicking a swatch calls JavaScript that sets the element's <code>style.background</code>, <code>style.color</code> etc. — simulating how CSS <code>background-color</code> and <code>color</code> cascade onto a component in real apps.
+          <strong>How it works:</strong> Clicking a swatch calls JavaScript that sets the element's <code>style.background</code>, <code>style.color</code> etc. simulating how CSS <code>background-color</code> and <code>color</code> cascade onto a component in real apps.
         </div>
       </div>
 
@@ -181,23 +183,22 @@
   </div>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-left">
       <div class="nav-logo">SU<span class="dot">.</span></div>
       <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
     </div>
-    <div class="footer-links">
-<a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a href="html.html">HTML</a>
-      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
-      <a href="javascript.html">JavaScript</a>
-        </div>
-    <div class="footer-right"><p>📧 subashchalise064@gmail.com</p><p>📍 Chitwan, Nepal</p></div>
+    <div class="footer-right">
+      <p>📧 subashchalise064@gmail.com</p>
+      <p>📍 Chitwan, Nepal</p>
+    </div>
   </div>
   <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
 </footer>
 
-<script src="main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
 <script>
 function applyTheme(bg, text, accent, name, desc) {
   document.getElementById('cssPreview').style.background = bg;

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
 <nav class="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
@@ -18,18 +19,20 @@
       <li><a href="css.html">CSS</a></li>
       <li><a href="bootstrap.html">Bootstrap</a></li>
       <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="about.html">About</a></li>
+      
     </ul>
     <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero hero-centered">
   <div class="hero-bg-grid"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Full Stack Developer</div>
-    <h1 class="hero-name">Subash<span class="line2">Upadhyaya</span></h1>
-    <p class="hero-tagline">Building seamless web experiences — from pixel-perfect interfaces to robust server-side logic.</p>
+  <div class="hero-content hero-content-wide">
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Student Developer</div>
+    <h1 class="hero-name hero-name-wide">Subash<span class="line2">Upadhyaya</span></h1>
+    <p class="hero-tagline hero-tagline-wide">Building seamless web experiences from pixel-perfect interfaces to robust server-side logic.</p>
     <div class="hero-chips">
       <span class="chip">HTML</span>
       <span class="chip">CSS</span>
@@ -37,23 +40,7 @@
       <span class="chip">JavaScript</span>
     </div>
     <div class="hero-actions">
-      <a href="#sections" class="btn-primary">Explore Portfolio →</a>
-      <a href="#about" class="btn-ghost">About Me</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="code-card">
-      <div class="code-dots"><span></span><span></span><span></span></div>
-      <pre><code><span class="c-kw">const</span> <span class="c-key">developer</span> = {
-  name:  <span class="c-str">"Subash Upadhyaya"</span>,
-  role:  <span class="c-str">"Full Stack Dev"</span>,
-  stack: [
-    <span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>, <span class="c-str">"Bootstrap"</span>,
-    <span class="c-str">"JavaScript"</span>
-  ],
-  location: <span class="c-str">"Chitwan, Nepal 🇳🇵"</span>,
-  passion: <span class="c-str">"Building the web"</span>  <span class="c-comment">// ✦</span>
-};</code></pre>
+      <a href="#sections" class="btn-primary">Explore Topics →</a>
     </div>
   </div>
 </header>
@@ -65,46 +52,6 @@
   <div class="stat"><span class="stat-num">5</span><span class="stat-label">Live Demos</span></div>
   <div class="stat-divider"></div>
   <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Responsive</span></div>
-  <div class="stat-divider"></div>
-  <div class="stat"><span class="stat-num">MERN</span><span class="stat-label">Stack</span></div>
-</section>
-
-<!-- FULL STACK SECTION -->
-<section class="fullstack-section" id="about">
-  <div class="container">
-    <div class="section-label">Core Concept</div>
-    <h2 class="section-title">What is Full Stack<br/><span class="accent">Development?</span></h2>
-    <div class="fullstack-grid">
-      <div class="fs-text">
-        <p>A full stack developer works on <strong>every layer</strong> of a web application — the front end users see, the back end that processes data, and the database that stores it all.</p>
-        <p>Think of building a restaurant: the <strong>front end</strong> is the dining room, the <strong>back end</strong> is the kitchen, and the <strong>database</strong> is the pantry. A full stack developer designs and runs all three.</p>
-        <div class="fs-layers">
-          <div class="layer layer-fe">
-            <span class="layer-icon">🖥</span>
-            <div><strong>Front End</strong><small>HTML · CSS · JavaScript · Bootstrap</small></div>
-          </div>
-          <div class="layer layer-be">
-            <span class="layer-icon">⚙️</span>
-            <div><strong>Back End</strong><small>Node.js · Express · PHP · Python</small></div>
-          </div>
-          <div class="layer layer-db">
-            <span class="layer-icon">🗄</span>
-            <div><strong>Database</strong><small>MongoDB · MySQL · PostgreSQL</small></div>
-          </div>
-        </div>
-        <p class="stack-note">Stacks like <strong>MERN</strong> (MongoDB, Express, React, Node) use JavaScript throughout the entire product — one language, front to back.</p>
-      </div>
-      <div class="fs-diagram">
-        <div class="diagram-tower">
-          <div class="dt-layer dt-client"><span>🌐 Client / Browser</span><small>What the user sees and interacts with</small></div>
-          <div class="dt-arrow">↕</div>
-          <div class="dt-layer dt-server"><span>⚡ Server / API</span><small>Receives requests, runs business logic</small></div>
-          <div class="dt-arrow">↕</div>
-          <div class="dt-layer dt-db"><span>🗃 Database</span><small>Stores and retrieves persistent data</small></div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- TOPIC CARDS -->
@@ -115,7 +62,7 @@
     <p class="section-sub">Click any card to explore a topic in depth with explanations, examples, and a live interactive demo.</p>
     <div class="topic-grid">
 
-        <div class="topic-card" data-topic="fullstack">
+      <div class="topic-card" data-topic="fullstack">
         <div class="tc-top">
           <div class="tc-icon fs-icon">FS</div>
           <span class="tc-tag">Architecture</span>
@@ -174,16 +121,12 @@
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-left">
       <div class="nav-logo">SU<span class="dot">.</span></div>
       <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a href="html.html">HTML</a>
-      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
-      <a href="javascript.html">JavaScript</a>
     </div>
     <div class="footer-right">
       <p>📧 subashchalise064@gmail.com</p>
@@ -193,6 +136,3 @@
   <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
 </footer>
 
-<script src="main.js"></script>
-</body>
-</html>

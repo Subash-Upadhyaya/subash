@@ -19,6 +19,8 @@
       <li><a href="css.html">CSS</a></li>
       <li><a href="bootstrap.html">Bootstrap</a></li>
       <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="about.html">About</a></li>
+      
     </ul>
     <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
   </div>
@@ -30,7 +32,7 @@
     <div class="topic-breadcrumb"><a href="index.html">Home</a> / Full Stack</div>
     <div class="section-label" style="color:var(--fs-c)">Web Architecture</div>
     <h1>Full Stack <span style="color:var(--fs-c)">Development</span></h1>
-    <p>Full stack means you can build both what users see and what happens behind the scenes — connecting the browser to a server, a database, and everything in between.</p>
+    <p>Full stack means you can build both what users see and what happens behind the scenes by connecting the browser to a server, a database, and everything in between.</p>
   </div>
 </section>
 
@@ -50,12 +52,12 @@
         <div class="concept-card">
           <div class="cc-icon">⚙️</div>
           <div class="cc-title">Back End</div>
-          <div class="cc-desc">The server that receives requests, runs business logic, and sends back data. Built with Node.js, Python, PHP, or Ruby.</div>
+          <div class="cc-desc">The server that receives requests, runs business logic, and sends back data. Built with Python, PHP, Node.js or Ruby.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🗄</div>
           <div class="cc-title">Database</div>
-          <div class="cc-desc">Persistent storage for all the app's data — users, posts, orders. Options include MongoDB (NoSQL) and MySQL/PostgreSQL (SQL).</div>
+          <div class="cc-desc">Persistent storage for all the app's data like users, posts, reactions,comments. Options include MySQL/PostgreSQL (SQL) and MongoDB (NoSQL).</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🔌</div>
@@ -96,7 +98,7 @@
           <div class="sf-num">3</div>
           <div class="sf-step-content">
             <strong>Server Processing</strong>
-            <p>Node.js/Express receives the request, validates it, then queries the database.</p>
+            <p>PHP receives the request, validates it, then queries the database.</p>
           </div>
         </div>
         <div class="sf-connector"></div>
@@ -169,7 +171,7 @@
             </div>
             <div id="step-server" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
               <span style="font-size:1.2rem">⚙️</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">Node.js Server</div><div id="step-server-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
+              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">PHP Server</div><div id="step-server-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
               <span id="step-server-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
             </div>
             <div id="step-db" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
@@ -210,23 +212,22 @@
   </div>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-left">
       <div class="nav-logo">SU<span class="dot">.</span></div>
       <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a href="html.html">HTML</a>
-      <a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a>
-      <a href="javascript.html">JavaScript</a>
+    <div class="footer-right">
+      <p>📧 subashchalise064@gmail.com</p>
+      <p>📍 Chitwan, Nepal</p>
     </div>
-    <div class="footer-right"><p>📧 subashchalise064@gmail.com</p><p>📍 Chitwan, Nepal</p></div>
   </div>
   <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
 </footer>
 
-<script src="main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
 <script>
 const fakeData = {
   users:   { status: 200, data: [{ id: 1, name: "Subash Upadhyaya", role: "admin" }, { id: 2, name: "Karun Thapa", role: "user" }] },
