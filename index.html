@@ -3,16 +3,57 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subash Upadhyaya · Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── extra index-only polish ── */
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--accent-dim); border: 1px solid var(--border2);
+      padding: 0.35rem 1rem; border-radius: 30px;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 2.2rem;
+    }
+    .hero-kicker::before { content:''; display:block; width:7px; height:7px; border-radius:50%; background:var(--accent); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+
+    .stat-strip {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      padding: 2.2rem 2.5rem; border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--accent-dim); }
+    .stat-num {
+      font-family: var(--ff-display); font-size: 3.2rem; color: var(--accent);
+      line-height: 1; display: block; margin-bottom: 0.4rem;
+    }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text2); }
+
+    /* glowing divider */
+    .glow-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.35; margin: 0;
+    }
+    @media (max-width:900px) { .stat-strip { grid-template-columns:1fr; } .stat-item { border-right:none; border-bottom:1px solid var(--border); } }
+  </style>
 </head>
 <body>
 <div class="main-wrap">
 
+  <div class="page-hero-bg">SU</div>
 
+  <!-- ── HERO ── -->
   <header class="hero hero-full">
     <div class="hero-left hero-left-full">
+      <div class="hero-kicker">
+        <span></span>Available for projects · Chitwan, Nepal
       </div>
 
       <h1 class="hero-name">
@@ -20,6 +61,8 @@
       </h1>
 
       <p class="hero-tagline">
+        I got into web development because I was curious about how websites actually work behind the scenes.
+        That curiosity is still going strong. This portfolio is my learning journal — every topic has a live demo you can actually interact with, not just read about.
       </p>
 
       <div class="hero-chips">
@@ -37,6 +80,25 @@
     </div>
   </header>
 
+  <!-- ── STATS ── -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Topics Covered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Live Demos</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2024</span>
+      <span class="stat-label">Started Learning</span>
+    </div>
+  </div>
+
+  <div class="glow-divider"></div>
+
+  <!-- ── TOPIC CARDS ── -->
   <section class="topics-section" id="topics">
     <div class="section-eyebrow">Explore Topics</div>
     <div class="section-heading">Module<br>Topics</div>
@@ -49,6 +111,7 @@
           <span class="tc-tag">Architecture</span>
         </div>
         <div class="tc-title">Full<br>Stack</div>
+        <p class="tc-desc">How the front end and back end connect, HTTP requests, REST APIs, Node servers, databases, and getting the whole thing deployed online.</p>
         <div class="tc-hint">⚡ Live: Request/response flow simulator</div>
         <span class="tc-link">Explore <span>→</span></span>
       </a>
@@ -70,6 +133,7 @@
           <span class="tc-tag">Styling</span>
         </div>
         <div class="tc-title">CSS</div>
+        <p class="tc-desc">Where plain HTML gets a personality. Selectors, flexbox, grid, the box model, animations, and making everything look decent on any screen size.</p>
         <div class="tc-hint">🎨 Live: Interactive colour theme picker</div>
         <span class="tc-link">Explore <span>→</span></span>
       </a>
@@ -91,6 +155,7 @@
           <span class="tc-tag">Programming</span>
         </div>
         <div class="tc-title">Java<br>Script</div>
+        <p class="tc-desc">The language that actually makes pages do things. Variables, functions, DOM manipulation, events, arrays, objects, and talking to APIs.</p>
         <div class="tc-hint">🎲 Live: Random number generator + DOM events</div>
         <span class="tc-link">Explore <span>→</span></span>
       </a>
@@ -102,8 +167,10 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya · Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
         <p>🐙 Subash-Upadhyaya</p>
       </div>

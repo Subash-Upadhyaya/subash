@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JavaScript | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -16,14 +17,17 @@
       <div class="page-breadcrumb"><a href="index.html">Home</a> JavaScript</div>
       <div class="page-topic-label" style="color:var(--js-c)">Programming Language</div>
       <h1><span style="color:var(--js-c)">JavaScript</span></h1>
+      <p>JavaScript is what actually makes pages do things. It's the only programming language that runs natively in every browser, and via Node.js it runs on servers too.</p>
     </div>
   </section>
 
   <div class="topic-body">
 
+    <!-- ── LEFT: concepts + code ── -->
     <div class="content-col">
       <h2>What is JavaScript?</h2>
       <p>Unlike HTML and CSS, JavaScript is a real programming language. It can make decisions, loop through data, respond to what users do, and fetch information from servers — all without reloading the page.</p>
+      <p>It runs <strong>in the browser</strong> where it controls the DOM, and also <strong>server-side</strong> via Node.js. One language, front and back, which is a big part of why so many developers use it for everything.</p>
 
       <h3>Core Concepts</h3>
       <div class="concept-grid reveal">
@@ -77,14 +81,19 @@ document.<span class="fn">querySelector</span>(<span class="str">'button'</span>
     box.style.color = <span class="str">'#f5c842'</span>;
   });
 
+<span class="comment">// async/await — wait for the fetch, then wait for the JSON parse</span>
 <span class="kw">async function</span> <span class="fn">getUser</span>() {
   <span class="kw">const</span> resp = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/user'</span>);
   <span class="kw">const</span> data = <span class="kw">await</span> resp.<span class="fn">json</span>();
   console.<span class="fn">log</span>(data.name);
+}
+      </div>
     </div>
 
+    <!-- ── RIGHT: demos ── -->
     <div class="demo-col">
 
+      <!-- 1. Random Number Generator -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <div class="tc-icon" style="color:var(--js-c);border-color:rgba(245,200,66,0.3);width:32px;height:32px;font-size:0.68rem">JS</div>
@@ -129,8 +138,10 @@ document.<span class="fn">querySelector</span>(<span class="str">'button'</span>
         </div>
       </div>
 
+      <!-- 2. Events showcase -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
+          <span class="demo-box-title">DOM Events · Showcase</span>
           <span class="demo-badge">Events</span>
         </div>
         <div class="demo-area">
@@ -146,6 +157,76 @@ document.<span class="fn">querySelector</span>(<span class="str">'button'</span>
         </div>
       </div>
 
+      <!-- 3. Scope Chain Tracer -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Scope Chain Tracer</span>
+          <span class="demo-badge">Visual</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Declare a variable in any scope and watch JavaScript look it up through the chain:</p>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            <select id="scopeDecl" style="background:var(--bg3);border:1px solid var(--border);color:var(--js-c);padding:0.4rem 0.7rem;font-family:var(--ff-mono);font-size:0.75rem;outline:none;border-radius:4px">
+              <option value="global">Global scope</option>
+              <option value="function">Function scope</option>
+              <option value="block">Block scope (let)</option>
+            </select>
+            <input id="scopeVarName" type="text" placeholder="variable name" maxlength="12"
+              style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.4rem 0.7rem;font-family:var(--ff-mono);font-size:0.75rem;outline:none;flex:1;border-radius:4px;min-width:80px"/>
+            <button onclick="traceScope()" class="js-btn primary" style="font-size:0.7rem">Trace</button>
+            <button onclick="clearScope()" class="js-btn" style="font-size:0.7rem">Clear</button>
+          </div>
+          <div id="scopeViz" style="display:flex;flex-direction:column;gap:4px">
+            <div style="border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.8rem 1rem;background:rgba(245,200,66,0.04)">
+              <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--js-c);margin-bottom:0.5rem">Global Scope</div>
+              <div id="globalVars" style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--text2);min-height:20px">window, document, console...</div>
+            </div>
+            <div style="text-align:center;color:var(--text2);font-size:0.7rem">↓ look up chain</div>
+            <div style="border:1px solid rgba(130,170,255,0.2);border-radius:8px;padding:0.8rem 1rem;background:rgba(130,170,255,0.04)">
+              <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--css-c);margin-bottom:0.5rem">Function Scope</div>
+              <div id="funcVars" style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--text2);min-height:20px">arguments, this...</div>
+            </div>
+            <div style="text-align:center;color:var(--text2);font-size:0.7rem">↓ look up chain</div>
+            <div style="border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:0.8rem 1rem;background:rgba(52,211,153,0.04)">
+              <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fs-c);margin-bottom:0.5rem">Block Scope (let / const)</div>
+              <div id="blockVars" style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--text2);min-height:20px">loop counters, if-block vars...</div>
+            </div>
+          </div>
+          <p id="scopeResult" style="margin-top:0.8rem;font-size:0.75rem;font-family:var(--ff-mono);color:var(--text2)">Declare a variable to see where it lives.</p>
+        </div>
+        <div class="demo-footer">
+          <strong>How it works:</strong> JavaScript looks for a variable in the innermost scope first, then walks outward. <code>var</code> skips block scope entirely and lands in function scope. <code>let</code> and <code>const</code> stay in the block.
+        </div>
+      </div>
+
+      <!-- 4. NICHE: Array Method Visualiser -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Array Method Visualiser</span>
+          <span class="demo-badge">Niche Demo</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Enter comma-separated numbers, pick a method, and see it transform the array step-by-step:</p>
+          <input id="arrInput" type="text" value="3, 1, 7, 2, 9, 4" class="form-input" style="margin-bottom:0.7rem" placeholder="e.g. 3, 1, 7, 2, 9, 4"/>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.9rem">
+            <button class="js-btn" onclick="runArrMethod('map')">.map(n => n * 2)</button>
+            <button class="js-btn" onclick="runArrMethod('filter')">.filter(n > 3)</button>
+            <button class="js-btn" onclick="runArrMethod('sort')">.sort()</button>
+            <button class="js-btn" onclick="runArrMethod('reduce')">.reduce(sum)</button>
+            <button class="js-btn" onclick="runArrMethod('reverse')">.reverse()</button>
+          </div>
+          <!-- visual bars -->
+          <div id="arrViz" style="display:flex;align-items:flex-end;gap:4px;height:120px;margin-bottom:0.5rem"></div>
+          <div id="arrOrigRow" style="display:flex;gap:4px;margin-bottom:0.4rem;flex-wrap:wrap"></div>
+          <div id="arrArrow" style="color:var(--text2);font-size:0.75rem;font-family:var(--ff-mono);margin-bottom:0.4rem"></div>
+          <div id="arrResultRow" style="display:flex;gap:4px;flex-wrap:wrap"></div>
+          <p id="arrExplain" style="color:var(--text2);font-size:0.72rem;margin-top:0.6rem;line-height:1.5"></p>
+        </div>
+        <div class="demo-footer">
+          <strong>How it works:</strong> Each method is called on the parsed array and the result is displayed as colour-coded cells. The bar chart shows relative values; the cell rows show before → after the transformation.
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -153,8 +234,10 @@ document.<span class="fn">querySelector</span>(<span class="str">'button'</span>
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya · Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -165,14 +248,178 @@ document.<span class="fn">querySelector</span>(<span class="str">'button'</span>
 <script src="main.js"></script>
 <script>
 
+// ── RANDOM NUMBER GENERATOR
+var rollHistory = [], numRolls = 0, runningSum = 0, topSoFar = -Infinity;
 
+function rollNumber() {
+  var lo = parseInt(document.getElementById('lowEnd').value)  || 1;
+  var hi = parseInt(document.getElementById('highEnd').value) || 100;
 
+  if (lo >= hi) {
+    document.getElementById('numOut').textContent = '⚠';
+    document.getElementById('rollLog').innerHTML  =
+      '<span style="color:#ff7b72">Min has to be less than Max!</span>';
+    return;
   }
 
+  var picked = Math.floor(Math.random() * (hi - lo + 1) + lo);
+  numRolls++;
+  runningSum += picked;
+  if (picked > topSoFar) topSoFar = picked;
+  rollHistory.unshift(picked);
+  if (rollHistory.length > 8) rollHistory.pop();
+
+  var screen = document.getElementById('numOut');
+  screen.textContent = picked;
+  screen.classList.remove('number-bounce');
+  void screen.offsetWidth;
+  screen.classList.add('number-bounce');
+
+  document.getElementById('statsPanel').style.display = 'block';
+  document.getElementById('rollCount').textContent    = numRolls;
+  document.getElementById('rollAvg').textContent      = (runningSum / numRolls).toFixed(1);
+  document.getElementById('rollHigh').textContent     = topSoFar;
+
+  document.getElementById('rollLog').innerHTML = rollHistory.map(function(n, i) {
+    return '<span style="color:var(--text2)">#' + (numRolls - i) + ':</span>' +
+           ' <span style="color:var(--js-c)">' + n + '</span>   ';
+  }).join('');
+}
+
+function wipeStats() {
+  rollHistory = []; numRolls = 0; runningSum = 0; topSoFar = -Infinity;
+  document.getElementById('numOut').textContent       = '?';
+  document.getElementById('statsPanel').style.display = 'none';
+  document.getElementById('rollLog').innerHTML        = '<span style="color:var(--text2)">Nothing yet…</span>';
+}
+
+// ── EVENT DEMO HANDLERS
+function onHover() {
+  document.getElementById('evtBox').style.borderColor = 'var(--js-c)';
+  document.getElementById('evtMsg').textContent = '👋 Hovering!';
+  document.getElementById('evtSub').textContent = 'event: mouseover';
+}
+function onLeave() {
+  document.getElementById('evtBox').style.borderColor = 'var(--border)';
+  document.getElementById('evtMsg').textContent = 'Hover or click me!';
+  document.getElementById('evtSub').textContent = 'I respond to JS events';
+}
+function onClick() {
+  var responses = ['🎉 Clicked!', '⚡ Got it!', '🚀 Nice one!', '✨ JavaScript!'];
+  var chosen    = responses[Math.floor(Math.random() * responses.length)];
+  document.getElementById('evtMsg').textContent = chosen;
+  document.getElementById('evtSub').textContent = 'event: click';
+  var box = document.getElementById('evtBox');
+  box.style.transform = 'scale(0.96)';
+  setTimeout(function() { box.style.transform = ''; }, 140);
+}
+function onType(val) {
+  var output = document.getElementById('typeOut');
+  if (val.length === 0) {
+    output.textContent = 'event: waiting for input…';
+  } else {
+    output.innerHTML = 'event: <span style="color:var(--js-c)">input</span>  ·  ' +
+      'value: <span style="color:var(--js-c)">"' + val + '"</span>  ·  ' +
+      'length: <span style="color:var(--js-c)">' + val.length + '</span>';
   }
+}
+
+// ── SCOPE CHAIN TRACER
+var globalDeclared = [], funcDeclared = [], blockDeclared = [];
+
+function traceScope() {
+  var scope = document.getElementById('scopeDecl').value;
+  var name  = document.getElementById('scopeVarName').value.trim();
+  if (!name) { document.getElementById('scopeResult').textContent = 'Enter a variable name first.'; return; }
+
+  var colour = scope === 'block' ? 'var(--fs-c)' : scope === 'function' ? 'var(--css-c)' : 'var(--js-c)';
+
+  if (scope === 'global')   { globalDeclared.push(name); updateList('globalVars', globalDeclared, 'var(--js-c)'); }
+  if (scope === 'function') { funcDeclared.push(name);   updateList('funcVars',   funcDeclared,   'var(--css-c)'); }
+  if (scope === 'block')    { blockDeclared.push(name);  updateList('blockVars',  blockDeclared,  'var(--fs-c)'); }
+
+  var keyword = scope === 'block' ? 'let' : scope === 'function' ? 'var (inside fn)' : 'var / let (global)';
+  var where   = scope === 'global'   ? 'Global scope — accessible everywhere' :
+                scope === 'function' ? 'Function scope — only inside the function' :
+                                       'Block scope — only inside the { } block';
+
+  document.getElementById('scopeResult').innerHTML =
+    '<span style="color:' + colour + '">' + keyword + ' ' + name + '</span> lives in: ' + where;
+  document.getElementById('scopeVarName').value = '';
+}
+
+function updateList(id, arr, col) {
+  var el   = document.getElementById(id);
+  var base = id === 'globalVars' ? 'window, document, console' :
+             id === 'funcVars'   ? 'arguments, this' : 'loop counters, if-block vars';
+  el.innerHTML = base + (arr.length ? ', <span style="color:' + col + '">' + arr.join(', ') + '</span>' : '');
+}
+
+function clearScope() {
+  globalDeclared = []; funcDeclared = []; blockDeclared = [];
+  document.getElementById('globalVars').textContent  = 'window, document, console...';
+  document.getElementById('funcVars').textContent    = 'arguments, this...';
+  document.getElementById('blockVars').textContent   = 'loop counters, if-block vars...';
+  document.getElementById('scopeResult').textContent = 'Declare a variable to see where it lives.';
+}
+
+// ── ARRAY METHOD VISUALISER
+function getInputArray() {
+  return document.getElementById('arrInput').value
+    .split(',')
+    .map(function(s) { return parseFloat(s.trim()); })
+    .filter(function(n) { return !isNaN(n); });
+}
+
+function renderCells(arr, containerId, col) {
+  var el = document.getElementById(containerId);
+  el.innerHTML = arr.map(function(n) {
+    return '<span style="background:' + col + ';color:#070b0f;padding:0.3rem 0.55rem;font-family:var(--ff-mono);font-size:0.78rem;font-weight:600;border-radius:3px;display:inline-block">' + n + '</span>';
+  }).join('');
+}
+
+function renderBars(arr, highlightColor) {
+  var viz = document.getElementById('arrViz');
+  var max = Math.max.apply(null, arr.map(Math.abs)) || 1;
+  viz.innerHTML = arr.map(function(n) {
+    var h   = Math.max(4, Math.round((Math.abs(n) / max) * 70));
+    return '<div style="flex:1;background:' + highlightColor + ';height:' + h + 'px;border-radius:2px 2px 0 0;opacity:0.8;min-width:12px;transition:height 0.4s"></div>';
+  }).join('');
+}
+
+function runArrMethod(method) {
+  var orig = getInputArray();
+  if (!orig.length) { document.getElementById('arrExplain').textContent = 'Enter some numbers first.'; return; }
+
+  var result, explain;
+
+  if (method === 'map') {
+    result  = orig.map(function(n) { return n * 2; });
+    explain = '.map(n => n * 2) — creates a new array where each number is doubled. The original array is unchanged.';
+  } else if (method === 'filter') {
+    result  = orig.filter(function(n) { return n > 3; });
+    explain = '.filter(n => n > 3) — creates a new array keeping only numbers greater than 3. Length may shrink.';
+  } else if (method === 'sort') {
+    result  = orig.slice().sort(function(a, b) { return a - b; });
+    explain = '.sort((a,b) => a - b) — sorts numerically ascending. Without the comparator, JS would sort as strings.';
+  } else if (method === 'reduce') {
+    var sum = orig.reduce(function(acc, n) { return acc + n; }, 0);
+    result  = [sum];
+    explain = '.reduce((acc, n) => acc + n, 0) — collapses the whole array into one value: the total sum (' + sum + ').';
+  } else if (method === 'reverse') {
+    result  = orig.slice().reverse();
+    explain = '.reverse() — reverses the array order in place. Here we use .slice() first so the original is safe.';
   }
 
+  renderBars(result, 'var(--js-c)');
+  renderCells(orig, 'arrOrigRow', 'rgba(245,200,66,0.6)');
+  document.getElementById('arrArrow').textContent = '— ' + method + '() →';
+  renderCells(result, 'arrResultRow', 'var(--js-c)');
+  document.getElementById('arrExplain').textContent = explain;
+}
 
+// init with a default
+runArrMethod('sort');
 </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HTML | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -22,6 +23,7 @@
 
   <div class="topic-body">
 
+    <!-- ── LEFT: explanation + code ── -->
     <div class="content-col">
       <h2>What is HTML?</h2>
       <p>HTML (HyperText Markup Language) tells the browser what to put on the page and what it <em>means</em>. Not how it looks — that's CSS — just what the content actually is. A heading, a paragraph, a link, an image.</p>
@@ -58,6 +60,7 @@
 <span class="tag">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span>
 <span class="tag">&lt;head&gt;</span>
+  <span class="comment">&lt;!-- metadata, not visible to users but read by browsers and bots --&gt;</span>
   <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">/&gt;</span>
   <span class="tag">&lt;title&gt;</span>My Page<span class="tag">&lt;/title&gt;</span>
   <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"style.css"</span><span class="tag">/&gt;</span>
@@ -72,6 +75,8 @@
     <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"photo.jpg"</span> <span class="attr">alt</span>=<span class="val">"Description here"</span><span class="tag">/&gt;</span>
   <span class="tag">&lt;/main&gt;</span>
 <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+      </div>
 
       <h3>Quick Reference</h3>
       <div class="info-box reveal">
@@ -80,6 +85,7 @@
           <li><strong>&lt;h1&gt;–&lt;h6&gt;</strong> — Headings, most to least important. Only one &lt;h1&gt; per page ideally.</li>
           <li><strong>&lt;p&gt;</strong> — Paragraph. Gets display:block and margin by default.</li>
           <li><strong>&lt;a href=""&gt;</strong> — Hyperlink. href="" goes nowhere, # scrolls to top, external needs the full URL.</li>
+          <li><strong>&lt;img src="" alt=""&gt;</strong> — Image. alt is required; skip it and screen readers have nothing to say.</li>
           <li><strong>&lt;ul&gt; / &lt;ol&gt;</strong> — Bullet list / numbered list. Items go inside &lt;li&gt; tags.</li>
           <li><strong>&lt;div&gt; / &lt;span&gt;</strong> — Generic containers with no semantic meaning. div is block, span is inline.</li>
           <li><strong>&lt;form&gt;, &lt;input&gt;, &lt;button&gt;</strong> — User input. Always label your inputs.</li>
@@ -88,10 +94,14 @@
       </div>
     </div>
 
+    <!-- ── RIGHT: interactive demos ── -->
     <div class="demo-col">
+
+      <!-- 1. Tag Builder -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <div class="tc-icon" style="color:var(--html-c);border-color:rgba(255,107,53,0.3);width:32px;height:32px;font-size:0.72rem">&lt;/&gt;</div>
+          <span class="demo-box-title">HTML Tag Builder · Live</span>
           <span class="demo-badge">Interactive</span>
         </div>
         <div class="demo-area">
@@ -100,7 +110,12 @@
             <span style="color:var(--text2);font-style:italic;font-size:0.82rem">Elements will appear here once you click a button…</span>
           </div>
           <div>
+            <button class="tag-btn" onclick="insertTag('h1','Hello World!')">+ &lt;h1&gt;</button>
+            <button class="tag-btn" onclick="insertTag('h3','A Sub-Heading')">+ &lt;h3&gt;</button>
+            <button class="tag-btn" onclick="insertTag('p','A paragraph of text. HTML gives it meaning in the document structure.')">+ &lt;p&gt;</button>
             <button class="tag-btn" onclick="insertLink()">+ &lt;a&gt; Link</button>
+            <button class="tag-btn" onclick="insertTag('ul','<li>First item</li><li>Second item</li><li>Third item</li>')">+ &lt;ul&gt;</button>
+            <button class="tag-btn" onclick="insertTag('blockquote','&ldquo;The web is for everyone.&rdquo; — Tim Berners-Lee')">+ &lt;blockquote&gt;</button>
             <button class="tag-btn" onclick="insertForm()">+ &lt;form&gt;</button>
             <button class="tag-btn" onclick="insertRule()">+ &lt;hr&gt;</button>
             <button class="clear-btn" onclick="resetArea()">⟳ Clear</button>
@@ -111,6 +126,7 @@
         </div>
       </div>
 
+      <!-- 2. Semantic layout diagram -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <span class="demo-box-title">Semantic Page Layout</span>
@@ -130,14 +146,35 @@
         </div>
       </div>
 
+      <!-- 3. Tag Nesting Depth Meter -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Tag Nesting Depth Meter</span>
+          <span class="demo-badge">Visual</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Type or paste HTML and see how deeply each tag is nested. Deep nesting is usually a signal to refactor.</p>
+          <textarea id="nestInput" rows="5" placeholder="Paste some HTML here..."
+            style="background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.7rem;font-family:var(--ff-mono);font-size:0.75rem;width:100%;outline:none;resize:vertical;border-radius:6px;margin-bottom:0.8rem"
+            oninput="analyseNesting(this.value)"></textarea>
+          <div id="nestResult" style="font-family:var(--ff-mono);font-size:0.75rem;display:flex;flex-direction:column;gap:4px"></div>
+          <p id="nestSummary" style="color:var(--text2);font-size:0.72rem;margin-top:0.6rem"></p>
+        </div>
+        <div class="demo-footer">
+          <strong>Rule of thumb:</strong> anything beyond 4–5 levels of nesting is hard to read and usually means a wrapper div that didn't need to exist.
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya · Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -147,19 +184,193 @@
 </div>
 <script src="main.js"></script>
 <script>
+// ── TAG BUILDER STATE
+var previewIsEmpty = true;
 
+function getArea() { return document.getElementById('liveArea'); }
 
+function clearPlaceholder() {
+  if (!previewIsEmpty) return;
+  getArea().innerHTML = '';
+  previewIsEmpty = false;
+}
 
+function insertTag(tagName, html) {
+  clearPlaceholder();
+  var el = document.createElement(tagName);
+  el.innerHTML = html;
+  getArea().appendChild(el);
+}
 
+function insertLink() {
+  clearPlaceholder();
+  var a = document.createElement('a');
+  a.href = '#';
+  a.textContent = '🔗 This is a hyperlink — click me!';
+  a.style.cssText = 'color:var(--html-c);display:block;margin:4px 0;text-decoration:underline';
+  getArea().appendChild(a);
+}
 
+function insertRule() {
+  clearPlaceholder();
+  var hr = document.createElement('hr');
+  hr.style.cssText = 'border:none;border-top:2px solid var(--html-c);margin:8px 0';
+  getArea().appendChild(hr);
+}
+
+function insertForm() {
+  clearPlaceholder();
+  var wrapper = document.createElement('div');
+  wrapper.innerHTML =
+    '<div style="border:1px solid var(--border);padding:10px;display:inline-block;border-radius:4px">' +
+      '<label style="display:block;font-size:0.82rem;margin-bottom:4px">Your name:</label>' +
+      '<input type="text" placeholder="Type here…" ' +
+        'style="border:1px solid var(--border);background:var(--bg);color:var(--text);padding:4px 8px;font-size:0.82rem"/>' +
+      '<button style="margin-left:6px;background:var(--html-c);color:#fff;border:none;' +
+        'padding:4px 10px;cursor:pointer;font-size:0.82rem">Submit</button>' +
+    '</div>';
+  getArea().appendChild(wrapper);
+}
+
+function resetArea() {
+  getArea().innerHTML = '<span style="color:var(--text2);font-style:italic;font-size:0.82rem">Elements will appear here once you click a button…</span>';
+  previewIsEmpty = true;
+}
+
+// ── NESTING ANALYSER
+function analyseNesting(html) {
+  var result  = document.getElementById('nestResult');
+  var summary = document.getElementById('nestSummary');
+  result.innerHTML = '';
+
+  if (!html.trim()) { summary.textContent = ''; return; }
+
+  var depth = 0, maxDepth = 0, lines = [];
+ var tagRe = /<(\/?)([a-zA-Z][a-zA-Z0-9]*)[^>]*(\/?)>/g;  var match;
+  var voids = ['img','br','hr','input','meta','link','area','base','col','embed','param','source','track','wbr'];
+
+  while ((match = tagRe.exec(html)) !== null) {
+    var isClose = match[1] === '/';
+    var isSelf  = match[3] === '/';
+    var tagName = match[2].toLowerCase();
+    var isVoid  = voids.indexOf(tagName) !== -1;
+
+    if (isClose) { depth = Math.max(0, depth - 1); }
+    else if (!isSelf && !isVoid) {
+      lines.push({ tag: tagName, depth: depth });
+      depth++;
+      if (depth > maxDepth) maxDepth = depth;
+    } else {
+      lines.push({ tag: tagName, depth: depth, self: true });
+    }
   }
 
+  var colours = ['#34d399','#4f9cf9','#f5c842','#ff9f43','#ff6b35','#e74c3c'];
+
+  lines.slice(0, 12).forEach(function(item) {
+    var d   = Math.min(item.depth, colours.length - 1);
+    var col = colours[d];
+    var bar = document.createElement('div');
+    bar.style.cssText = 'display:flex;align-items:center;gap:0.5rem;padding:2px 0';
+    bar.innerHTML =
+      '<div style="width:' + (item.depth * 14 + 6) + 'px;height:4px;background:' + col + ';border-radius:2px;flex-shrink:0;transition:width 0.3s"></div>' +
+      '<span style="color:' + col + '">&lt;' + item.tag + (item.self ? '/' : '') + '&gt;</span>' +
+      '<span style="color:var(--text2);font-size:0.65rem">depth ' + item.depth + '</span>';
+    result.appendChild(bar);
+  });
+
+  if (lines.length > 12) {
+    var more = document.createElement('p');
+    more.style.cssText = 'color:var(--text2);font-size:0.7rem;margin-top:4px';
+    more.textContent = '...and ' + (lines.length - 12) + ' more tags';
+    result.appendChild(more);
   }
 
+  summary.textContent = lines.length + ' tags found · max nesting depth: ' + maxDepth +
+    (maxDepth > 4 ? ' — consider simplifying' : ' — looks clean');
+}
+
+// ── ATTRIBUTE INSPECTOR
+var attrDocs = {
+  href:      'URL this link points to. Use "/" for root, "#id" for page section, or full URL for external.',
+  src:       'URL of the resource to load (image, script, iframe, etc.).',
+  alt:       'Alternative text for images — read by screen readers & shown when image fails.',
+  class:     'One or more CSS class names (space-separated) for styling with CSS or targeting with JS.',
+  id:        'Unique identifier for this element. Used by CSS (#id) and JS (getElementById).',
+  type:      'Input type (text, email, password, checkbox, submit…) or button type.',
+  name:      'Form field name — sent as the key when the form is submitted.',
+  value:     'The default or current value of an input element.',
+  placeholder: 'Ghost text shown inside an input before the user types anything.',
+  action:    'URL the form data is sent to when submitted.',
+  method:    'HTTP method for form submission: GET (data in URL) or POST (data in body).',
+  target:    '_blank opens in new tab; _self (default) opens in same tab.',
+  rel:       'Relationship between current page and linked resource. "noopener" is a security best practice with target="_blank".',
+  style:     'Inline CSS applied directly on this element — overrides all other styles.',
+  disabled:  'Boolean attribute — makes the element uninteractable and grayed out.',
+  required:  'Boolean — form cannot submit unless this field has a value.',
+  checked:   'Boolean — sets a checkbox or radio button to pre-selected.',
+  readonly:  'Boolean — the field shows a value but the user cannot change it.',
+  colspan:   'How many table columns this cell should span.',
+  rowspan:   'How many table rows this cell should span.',
+  width:     'Width of the element (prefer CSS instead).',
+  height:    'Height of the element (prefer CSS instead).',
+  lang:      'Language of the element\'s content, e.g. "en", "ne" for Nepali.',
+  charset:   'Character encoding — always use UTF-8.',
+  content:   'Content of a meta tag (used for description, viewport, etc.).',
+  'data-*':  'Custom data attribute — store extra info on an element, readable via JS with dataset.',
+  role:      'ARIA role — tells assistive tech what this element does (button, dialog, navigation…).',
+  'aria-label': 'ARIA — provides an accessible label for elements without visible text.',
+};
+
+function inspectAttrs(raw) {
+  var result  = document.getElementById('attrResult');
+  var tagLine = document.getElementById('attrTagName');
+  result.innerHTML = '';
+  tagLine.textContent = '';
+
+  if (!raw.trim()) return;
+
+  // pull tag name
+  var tagMatch = raw.match(/^<([a-zA-Z][a-zA-Z0-9]*)/);
+  var tagName  = tagMatch ? tagMatch[1].toLowerCase() : null;
+  if (tagName) {
+    tagLine.innerHTML = 'Tag: <span style="color:var(--html-c)">&lt;' + tagName + '&gt;</span>';
   }
 
+  // extract all attr="value" or bare boolean attrs
+  var attrRe = /([a-zA-Z][\w:-]*)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|(\S+)))?/g;
+  var inner   = raw.replace(/^<[a-zA-Z][a-zA-Z0-9]*\s*/, '').replace(/\/?>$/, '');
+  var found   = 0;
+  var m;
+
+  while ((m = attrRe.exec(inner)) !== null) {
+    var name = m[1].toLowerCase();
+    var val  = m[2] !== undefined ? m[2] : (m[3] !== undefined ? m[3] : (m[4] !== undefined ? m[4] : null));
+
+    // skip obvious junk
+    if (name.length < 1) continue;
+    found++;
+
+    var doc  = attrDocs[name] || attrDocs['data-*'] && name.startsWith('data-') ? attrDocs['data-*'] : 'No description available — check MDN for full details.';
+    var isKnown = attrDocs[name] || (name.startsWith('data-') && attrDocs['data-*']);
+
+    var card = document.createElement('div');
+    card.style.cssText = 'background:var(--bg);border:1px solid var(--border);border-left:2px solid ' +
+      (isKnown ? 'var(--html-c)' : 'var(--text2)') + ';border-radius:0 6px 6px 0;padding:0.6rem 0.9rem';
+    card.innerHTML =
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.25rem">' +
+        '<span style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--html-c)">' + name + '</span>' +
+        (val !== null ? '<span style="font-family:var(--ff-mono);font-size:0.7rem;color:var(--fs-c)">= "' + val + '"</span>' :
+                        '<span style="font-size:0.65rem;color:var(--text2);letter-spacing:0.1em">boolean</span>') +
+      '</div>' +
+      '<div style="font-size:0.75rem;color:var(--text2);line-height:1.5">' + doc + '</div>';
+    result.appendChild(card);
   }
 
+  if (found === 0) {
+    tagLine.innerHTML += ' <span style="color:var(--text2);font-size:0.7rem">(no attributes found)</span>';
+  }
+}
 </script>
 </body>
 </html>

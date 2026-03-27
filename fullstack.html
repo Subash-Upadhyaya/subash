@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Full Stack | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -17,6 +18,7 @@
       <div class="page-breadcrumb"><a href="index.html">Home</a> Full Stack</div>
       <div class="page-topic-label" style="color:var(--fs-c)">Web Architecture</div>
       <h1>Full Stack <span style="color:var(--fs-c)">Development</span></h1>
+      <p>Full stack means being able to build both sides, the interface people interact with, and the server doing the work behind it. Connecting those two things is where it gets interesting.</p>
     </div>
   </section>
 
@@ -36,10 +38,12 @@
         <div class="concept-card">
           <div class="cc-icon">⚙️</div>
           <div class="cc-title">Back End</div>
+          <div class="cc-desc">The server that handles requests, runs business logic, and talks to the database. Could be PHP, Node.js, Python, or many others, the browser never touches this code directly.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🗄</div>
           <div class="cc-title">Database</div>
+          <div class="cc-desc">Where everything gets stored, user accounts, posts, settings. SQL databases like MySQL use tables and rows. NoSQL like MongoDB uses documents that look like JSON objects.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🔌</div>
@@ -54,6 +58,7 @@
         <div class="concept-card">
           <div class="cc-icon">🚀</div>
           <div class="cc-title">Deployment</div>
+          <div class="cc-desc">Getting the app online. Static front end goes to Netlify or Vercel. Back end needs a server, Render, Railway, or a VPS. Environment variables keep secrets out of code.</div>
         </div>
       </div>
 
@@ -61,9 +66,11 @@
       <div class="stack-flow reveal">
         <div class="sf-step">
           <div class="sf-num">1</div>
+          <div><strong>User Action</strong><p>User clicks something, submits a form, loads a page, hits a button. The browser is ready to do something.</p></div>
         </div>
         <div class="sf-step">
           <div class="sf-num">2</div>
+          <div><strong>HTTP Request</strong><p>JavaScript fires a <code style="color:var(--fs-c)">fetch()</code> call, something like <code style="color:var(--fs-c)">GET /api/users</code>. This leaves the browser and travels over the network.</p></div>
         </div>
         <div class="sf-step">
           <div class="sf-num">3</div>
@@ -83,6 +90,10 @@
       <div class="info-box reveal">
         <h4>Popular Tech Combinations</h4>
         <ul>
+          <li><strong>MERN</strong>, MongoDB, Express, React, Node.js. All JavaScript, front to back.</li>
+          <li><strong>MEAN</strong>, Same but Angular instead of React. More structured, more opinionated.</li>
+          <li><strong>LAMP</strong>, Linux, Apache, MySQL, PHP. What most shared hosting runs. What I'm learning with.</li>
+          <li><strong>JAMstack</strong>, JavaScript, APIs, Markup. Mostly serverless, content pulled from APIs at build time.</li>
         </ul>
       </div>
     </div>
@@ -121,6 +132,7 @@
             Hit ▶ Send to simulate a request through the full stack.
           </div>
 
+          <!-- step flow, shown after first run -->
           <div id="simSteps" style="display:none">
 
             <div id="s-browser" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:4px">
@@ -153,6 +165,7 @@
               <span id="s-resp-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
             </div>
 
+            <!-- JSON output area, hidden until the sim finishes -->
             <div id="jsonOut" style="background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--fs-c);padding:1rem 1.2rem;font-family:var(--ff-mono);font-size:0.75rem;color:var(--text);display:none;line-height:1.8;white-space:pre"></div>
           </div>
         </div>
@@ -191,8 +204,10 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya, Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -201,8 +216,10 @@
 
 </div>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
 <script>
 
+  // mock API responses, one per endpoint
   // these get displayed as the JSON output at the end of each sim run
   var mockData = {
     users:   { status: 200, data: [
@@ -214,6 +231,7 @@
       { id: 2, title: 'MERN Stack Guide',   author: 'Karun'  }
     ]},
     login:   { status: 200, token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', message: 'Login successful' },
+    profile: { status: 200, user: { id: 1, name: 'Subash Upadhyaya', email: 'subashchalise0@gmail.com', joined: '2024-01-15' } }
   };
 
   // light up one step in the flow and show its checkmark a moment later
@@ -241,6 +259,7 @@
     });
   }
 
+  // main sim, async so we can await the delays between steps
   async function runSim() {
     var verb  = document.getElementById('verbPick').value;
     var key   = document.getElementById('routePick').value;
@@ -263,6 +282,7 @@
     // sequence each layer with realistic-ish delays
     await delay(200);  activateStep('browser', verb + ' ' + path + ' triggered');
     await delay(550);  activateStep('net',     'Sending ' + verb + ' ' + path + ' over HTTP');
+    await delay(650);  activateStep('srv',     'Route matched, processing request');
 
     // vary the database message slightly based on what the verb implies
     var dbMsg = verb === 'GET'    ? 'Running SELECT query…'

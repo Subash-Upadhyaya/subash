@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bootstrap | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -22,6 +23,7 @@
 
   <div class="topic-body">
 
+    <!-- ── LEFT: written content ── -->
     <div class="content-col">
       <h2>What is Bootstrap?</h2>
       <p>Bootstrap is a free, open-source CSS framework — originally built at Twitter, now independent. The idea is to solve the boring, repetitive parts of web UI so you can focus on the actual design decisions.</p>
@@ -62,6 +64,7 @@
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Left<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Right<span class="tag">&lt;/div&gt;</span>
 
+    <span class="comment">&lt;!-- equal thirds on lg, good for feature/service cards --&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 1<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 2<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 3<span class="tag">&lt;/div&gt;</span>
@@ -73,6 +76,8 @@
 <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex justify-content-center gap-3 mt-4"</span><span class="tag">&gt;</span>
   <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-primary"</span><span class="tag">&gt;</span>Primary<span class="tag">&lt;/button&gt;</span>
   <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-outline-secondary"</span><span class="tag">&gt;</span>Outline<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+      </div>
 
       <h3>Why Use It?</h3>
       <div class="info-box reveal">
@@ -87,7 +92,10 @@
       </div>
     </div>
 
+    <!-- ── RIGHT: interactive demos ── -->
     <div class="demo-col">
+
+      <!-- 1. Grid Visualiser -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <div class="tc-icon" style="color:var(--bs-c);border-color:rgba(167,139,250,0.3);width:32px;height:32px">B</div>
@@ -124,6 +132,7 @@
         </div>
       </div>
 
+      <!-- 2. Breakpoints Reference -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <span class="demo-box-title">Breakpoints Reference</span>
@@ -159,14 +168,90 @@
         </div>
       </div>
 
+      <!-- 3. Spacing scale visualiser -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Spacing Scale Visualiser</span>
+          <span class="demo-badge">Interactive</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Bootstrap uses a spacing scale of 0–5. Click a value to see the actual pixel size it maps to:</p>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem">
+            <button class="js-btn" onclick="showSpacing(0)" style="color:var(--bs-c)">0</button>
+            <button class="js-btn" onclick="showSpacing(1)">1</button>
+            <button class="js-btn" onclick="showSpacing(2)">2</button>
+            <button class="js-btn" onclick="showSpacing(3)">3</button>
+            <button class="js-btn" onclick="showSpacing(4)">4</button>
+            <button class="js-btn" onclick="showSpacing(5)">5</button>
+          </div>
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem">
+            <div id="spacingBlock" style="background:rgba(167,139,250,0.2);border:1px solid rgba(167,139,250,0.4);height:40px;width:2px;transition:width 0.4s cubic-bezier(.22,1,.36,1);border-radius:4px;flex-shrink:0"></div>
+            <div>
+              <div id="spacingLabel" style="font-family:var(--ff-mono);font-size:0.78rem;color:var(--bs-c)">Click a scale value above</div>
+              <div id="spacingRem"   style="font-size:0.7rem;color:var(--text2);margin-top:0.2rem"></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);margin-bottom:0.4rem">Full scale at a glance:</div>
+            <div style="display:flex;align-items:flex-end;gap:4px;height:60px">
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:2px;border-radius:2px"></div>
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:16px;border-radius:2px"></div>
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:24px;border-radius:2px"></div>
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:32px;border-radius:2px"></div>
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:48px;border-radius:2px"></div>
+              <div style="width:14px;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);height:60px;border-radius:2px"></div>
+            </div>
+            <div style="display:flex;gap:4px;margin-top:4px">
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">0</span>
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">1</span>
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">2</span>
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">3</span>
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">4</span>
+              <span style="width:14px;font-size:0.55rem;color:var(--text2);text-align:center">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="demo-footer">
+          <strong>The pattern:</strong> Bootstrap uses <code>$spacer * multiplier</code> where spacer is 1rem (16px). Scale 3 = 1rem, scale 4 = 1.5rem, scale 5 = 3rem.
+        </div>
+      </div>
+
+      <!-- 4. NICHE: Utility Class Translator -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Utility Class → CSS Translator</span>
+          <span class="demo-badge">Niche Demo</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Type any Bootstrap utility class and see the exact CSS it generates — no more guessing:</p>
+          <input id="utilInput" type="text" placeholder='e.g. mt-3 d-flex justify-content-between fw-bold'
+            style="background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.6rem 0.9rem;font-family:var(--ff-mono);font-size:0.8rem;width:100%;outline:none;border-radius:6px;margin-bottom:0.8rem"
+            oninput="translateUtil(this.value)"/>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.9rem">
+            <button class="js-btn" style="font-size:0.65rem" onclick="setUtil('mt-3 mb-2 px-4')">spacing</button>
+            <button class="js-btn" style="font-size:0.65rem" onclick="setUtil('d-flex align-items-center gap-2')">flex</button>
+            <button class="js-btn" style="font-size:0.65rem" onclick="setUtil('text-center fw-bold text-uppercase')">text</button>
+            <button class="js-btn" style="font-size:0.65rem" onclick="setUtil('w-50 h-100 rounded')">size</button>
+            <button class="js-btn" style="font-size:0.65rem" onclick="setUtil('bg-primary text-white border-0')">colour</button>
+          </div>
+          <div id="utilResult" style="display:flex;flex-direction:column;gap:6px"></div>
+        </div>
+        <div class="demo-footer">
+          <strong>How it works:</strong> A lookup table maps Bootstrap's utility class names to their underlying CSS declarations. This is exactly how Bootstrap's stylesheet works internally — each class is one or two CSS lines.
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya · Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -177,8 +262,188 @@
 <script src="main.js"></script>
 <script>
 
-  }
+// ── GRID VISUALISER
+var shades = [
+  'rgba(167,139,250,0.18)', 'rgba(167,139,250,0.26)',
+  'rgba(167,139,250,0.12)', 'rgba(167,139,250,0.22)',
+];
 
+function applyLayout(colWidths) {
+  var view = document.getElementById('layoutView');
+  view.innerHTML = '';
+
+  colWidths.forEach(function(w, idx) {
+    var cell = document.createElement('div');
+    cell.style.cssText =
+      'grid-column: span ' + w + ';' +
+      'background: ' + shades[idx % shades.length] + ';' +
+      'border: 1px solid rgba(167,139,250,0.3);' +
+      'padding: 1rem 0.5rem;' +
+      'text-align: center;' +
+      'font-size: 0.72rem;' +
+      'color: var(--bs-c);' +
+      'font-weight: 500;' +
+      'transition: background 0.3s';
+    cell.textContent = 'col-' + w;
+    view.appendChild(cell);
+  });
+
+  var used = colWidths.reduce(function(sum, n) { return sum + n; }, 0);
+  var cls  = colWidths.map(function(w) { return 'col-' + w; }).join(' + ');
+  document.getElementById('layoutNote').textContent =
+    'class="' + colWidths.map(function(w){ return 'col-' + w; }).join(' ') + '" — ' +
+    used + '/12 columns used' + (used === 12 ? ' ✓ perfect row' : used > 12 ? ' ⚠ over 12, will wrap' : ' (leaves gap)');
+}
+
+// ── SPACING SCALE VISUALISER
+var spacingMap = {
+  0: { px: 0,  rem: '0',       label: 'mt-0 / p-0', desc: 'No spacing at all. Useful for removing default margins.' },
+  1: { px: 4,  rem: '0.25rem', label: 'mt-1 / p-1', desc: 'Tiny nudge. Good for close-grouped icon and label pairs.' },
+  2: { px: 8,  rem: '0.5rem',  label: 'mt-2 / p-2', desc: 'Small gap. Works well between inline elements.' },
+  3: { px: 16, rem: '1rem',    label: 'mt-3 / p-3', desc: 'The base unit. Most form fields and card padding use this.' },
+  4: { px: 24, rem: '1.5rem',  label: 'mt-4 / p-4', desc: 'Comfortable section padding inside components.' },
+  5: { px: 48, rem: '3rem',    label: 'mt-5 / p-5', desc: 'Large gap. Between major page sections.' },
+};
+
+function showSpacing(val) {
+  var info  = spacingMap[val];
+  var maxPx = 48;
+  var w     = val === 0 ? 2 : Math.round((info.px / maxPx) * 200);
+  document.getElementById('spacingBlock').style.width      = w + 'px';
+  document.getElementById('spacingBlock').style.background = val === 0 ? 'rgba(167,139,250,0.06)' : 'rgba(167,139,250,0.2)';
+  document.getElementById('spacingLabel').textContent      = info.label + '  =  ' + info.px + 'px';
+  document.getElementById('spacingRem').textContent        = info.rem  + '  |  ' + info.desc;
+}
+
+// ── UTILITY CLASS TRANSLATOR
+var utilMap = {
+  // display
+  'd-none':    'display: none;',
+  'd-block':   'display: block;',
+  'd-inline':  'display: inline;',
+  'd-flex':    'display: flex;',
+  'd-grid':    'display: grid;',
+  // flex
+  'flex-row':            'flex-direction: row;',
+  'flex-column':         'flex-direction: column;',
+  'flex-wrap':           'flex-wrap: wrap;',
+  'flex-nowrap':         'flex-wrap: nowrap;',
+  'justify-content-start':   'justify-content: flex-start;',
+  'justify-content-end':     'justify-content: flex-end;',
+  'justify-content-center':  'justify-content: center;',
+  'justify-content-between': 'justify-content: space-between;',
+  'justify-content-around':  'justify-content: space-around;',
+  'align-items-start':   'align-items: flex-start;',
+  'align-items-end':     'align-items: flex-end;',
+  'align-items-center':  'align-items: center;',
+  'align-items-stretch': 'align-items: stretch;',
+  // text
+  'text-start':   'text-align: left;',
+  'text-center':  'text-align: center;',
+  'text-end':     'text-align: right;',
+  'fw-bold':      'font-weight: 700;',
+  'fw-normal':    'font-weight: 400;',
+  'fw-light':     'font-weight: 300;',
+  'fst-italic':   'font-style: italic;',
+  'text-uppercase': 'text-transform: uppercase;',
+  'text-lowercase': 'text-transform: lowercase;',
+  'text-capitalize':'text-transform: capitalize;',
+  // colour
+  'text-white':   'color: #fff;',
+  'text-dark':    'color: #212529;',
+  'text-muted':   'color: #6c757d;',
+  'bg-primary':   'background-color: #0d6efd;',
+  'bg-secondary': 'background-color: #6c757d;',
+  'bg-success':   'background-color: #198754;',
+  'bg-danger':    'background-color: #dc3545;',
+  'bg-warning':   'background-color: #ffc107;',
+  'bg-white':     'background-color: #fff;',
+  'bg-transparent':'background-color: transparent;',
+  // sizing
+  'w-25':  'width: 25%;',
+  'w-50':  'width: 50%;',
+  'w-75':  'width: 75%;',
+  'w-100': 'width: 100%;',
+  'h-25':  'height: 25%;',
+  'h-50':  'height: 50%;',
+  'h-75':  'height: 75%;',
+  'h-100': 'height: 100%;',
+  // border
+  'border':     'border: 1px solid #dee2e6;',
+  'border-0':   'border: 0;',
+  'rounded':    'border-radius: 0.375rem;',
+  'rounded-0':  'border-radius: 0;',
+  'rounded-circle': 'border-radius: 50%;',
+  'rounded-pill':   'border-radius: 50rem;',
+  // position
+  'position-relative': 'position: relative;',
+  'position-absolute': 'position: absolute;',
+  'position-fixed':    'position: fixed;',
+  'position-sticky':   'position: sticky;',
+};
+
+// Dynamic patterns
+function tryDynamic(cls) {
+  // spacing: m-*, mt-*, p-*, px-*, etc.
+  var spaceRem = [0, 0.25, 0.5, 1, 1.5, 3];
+  var spaceProp = {
+    m: 'margin', mt: 'margin-top', mb: 'margin-bottom', ms: 'margin-left',
+    me: 'margin-right', mx: ['margin-left','margin-right'], my: ['margin-top','margin-bottom'],
+    p: 'padding', pt: 'padding-top', pb: 'padding-bottom', ps: 'padding-left',
+    pe: 'padding-right', px: ['padding-left','padding-right'], py: ['padding-top','padding-bottom'],
+  };
+  var sm = cls.match(/^(m[tblrxyse]?|p[tblrxyse]?)-(\d)$/);
+  if (sm) {
+    var prefix = sm[1], num = parseInt(sm[2]);
+    var prop = spaceProp[prefix];
+    if (prop && num >= 0 && num <= 5) {
+      var val = spaceRem[num] + 'rem';
+      if (Array.isArray(prop)) return prop.map(function(p){ return p + ': ' + val + ';'; }).join('  ');
+      return prop + ': ' + val + ';';
+    }
+  }
+  // gap-*
+  var gm = cls.match(/^gap-(\d)$/);
+  if (gm) { return 'gap: ' + spaceRem[parseInt(gm[1])] + 'rem;'; }
+  // fs-* font size
+  var fsSizes = [null,'2.5rem','2rem','1.75rem','1.5rem','1.25rem','1rem'];
+  var fm = cls.match(/^fs-([1-6])$/);
+  if (fm) { return 'font-size: ' + fsSizes[parseInt(fm[1])] + ';'; }
+
+  return null;
+}
+
+function translateUtil(raw) {
+  var result = document.getElementById('utilResult');
+  result.innerHTML = '';
+  if (!raw.trim()) return;
+
+  var classes = raw.trim().split(/\s+/);
+  var found = 0;
+
+  classes.forEach(function(cls) {
+    cls = cls.toLowerCase().replace(/^\./, '');
+    var css = utilMap[cls] || tryDynamic(cls);
+    var card = document.createElement('div');
+    card.style.cssText = 'background:var(--bg);border:1px solid var(--border);border-left:2px solid ' +
+      (css ? 'var(--bs-c)' : 'var(--text2)') + ';border-radius:0 6px 6px 0;padding:0.55rem 0.9rem;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap';
+    card.innerHTML =
+      '<span style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--bs-c);flex-shrink:0">.' + cls + '</span>' +
+      '<span style="font-family:var(--ff-mono);font-size:0.72rem;color:' + (css ? 'var(--fs-c)' : 'var(--text2)') + '">' +
+        (css || '/* unknown class — check Bootstrap docs */') + '</span>';
+    result.appendChild(card);
+    if (css) found++;
+  });
+}
+
+function setUtil(val) {
+  document.getElementById('utilInput').value = val;
+  translateUtil(val);
+}
+
+// init
+setUtil('mt-3 d-flex align-items-center gap-2');
+applyLayout([12]);
 </script>
 </body>
 </html>

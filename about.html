@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -18,6 +19,7 @@
       <div class="page-topic-label" style="color:var(--purple)">The Developer</div>
       <h1>About <span style="color:var(--purple)">Me</span></h1>
       <p>A student developer from Chitwan, Nepal — figuring out web development one concept at a time, and genuinely enjoying the process.</p>
+      <p>A student developer from Chitwan, Nepal, figuring out web development one concept at a time, and genuinely enjoying the process.</p>
     </div>
   </section>
 
@@ -26,8 +28,11 @@
     <!-- left column: bio, quick facts, timeline -->
     <div class="content-col">
       <h2>Hi, I'm <span style="color:var(--purple)">Subash</span></h2>
+      <p>I'm still a student but I've spent a decent amount of my own time on this stuff outside of class. It started because I was curious about how sites like YouTube and Instagram actually work under the hood, that question sent me down a rabbit hole I haven't found the bottom of yet.</p>
       <p>By now I can build a full page from scratch: HTML structure, CSS styling, Bootstrap layouts, JavaScript for interactivity. I'm also starting to connect it all to actual server-side code with PHP, which is where it gets genuinely interesting.</p>
+      <p>This portfolio is my way of proving I understand something, not just that I can look it up. Every section has a working demo because there's a big difference between reading about flexbox and actually moving elements around with it.</p>
 
+      <!-- quick facts, basic flex rows, no separate component needed -->
       <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem">
         <div style="display:flex;align-items:center;gap:1rem;background:var(--bg);padding:0.85rem 1.1rem">
           <span style="font-size:1.1rem">🎓</span>
@@ -64,7 +69,9 @@
         <div class="tl-item">
           <div class="tl-dot"></div>
           <div>
+            <div class="tl-date">2024 to Present</div>
             <div class="tl-title">Full Stack Web Development Programme</div>
+            <div class="tl-desc">Enrolled in a structured full stack course covering HTML, CSS, Bootstrap, JavaScript, and PHP, with actual server-side projects, not just tutorials.</div>
           </div>
         </div>
         <div class="tl-item">
@@ -72,6 +79,7 @@
           <div>
             <div class="tl-date" style="color:var(--purple)">2024</div>
             <div class="tl-title">Built This ePortfolio</div>
+            <div class="tl-desc">Put this site together as a running record of what I've been learning. Each page has an interactive demo, because reading about code and actually playing with it are two completely different things.</div>
           </div>
         </div>
         <div class="tl-item">
@@ -138,6 +146,7 @@
         <div class="info-box reveal">
           <h4>🎓 Academic</h4>
           <ul>
+            <li>Full stack programme, coursework with proper practical projects</li>
             <li>Self-study on the side: W3Schools, MDN, freeCodeCamp, YouTube when I get stuck</li>
           </ul>
         </div>
@@ -171,6 +180,7 @@
       <div class="value-card reveal" style="transition-delay:0.05s">
         <div class="vc-icon">🛠</div>
         <div class="vc-title">Build to Learn</div>
+        <div class="vc-body">Passive reading gets me maybe 30% of the way. The rest happens when I'm actually building something, even if it's a tiny throwaway demo that only I'll ever see.</div>
       </div>
       <div class="value-card reveal" style="transition-delay:0.1s">
         <div class="vc-icon">📖</div>
@@ -185,6 +195,7 @@
       <div class="value-card reveal" style="transition-delay:0.2s">
         <div class="vc-icon">📱</div>
         <div class="vc-title">Mobile First</div>
+        <div class="vc-body">Most people browsing from Nepal are on their phones. Responsiveness isn't a bonus feature, it's just part of doing the job properly.</div>
       </div>
       <div class="value-card reveal" style="transition-delay:0.25s">
         <div class="vc-icon">🌱</div>
@@ -195,8 +206,11 @@
   </section>
 
   <!-- contact section -->
+  <section style="padding:4rem;border-top:1px solid var(--border)" id="contact">
+    <div class="section-eyebrow">Get in Touch</div>
     <div>
       <div class="section-heading" style="font-size:clamp(32px,4vw,52px);margin-bottom:2rem">Find Me<br><em style="font-family:var(--ff-serif);font-style:italic;color:var(--purple)">Here</em></div>
+      <div class="ci-item reveal"><span class="ci-icon">📧</span><div><div class="ci-label">Email</div><div class="ci-value">subashchalise0@gmail.com</div></div></div>
       <div class="ci-item reveal" style="transition-delay:0.05s"><span class="ci-icon">📞</span><div><div class="ci-label">Phone</div><div class="ci-value">+977-9767613243</div></div></div>
       <div class="ci-item reveal" style="transition-delay:0.1s"><span class="ci-icon">🐙</span><div><div class="ci-label">GitHub</div><div class="ci-value">Subash-Upadhyaya</div></div></div>
       <div class="ci-item reveal" style="transition-delay:0.15s"><span class="ci-icon">📸</span><div><div class="ci-label">Instagram</div><div class="ci-value">subash.chalise.064</div></div></div>
@@ -208,8 +222,10 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya, Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
         <p>🐙 Subash-Upadhyaya</p>
       </div>
@@ -242,6 +258,7 @@
 
 
   // ── CONTACT FORM
+  // no real backend, just simulates a send delay then shows success
   function submitForm(e) {
     e.preventDefault();
 
@@ -264,3 +281,4 @@
 
 </script>
 </body>
+</html>

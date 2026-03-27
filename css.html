@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CSS | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -22,6 +23,7 @@
 
   <div class="topic-body">
 
+    <!-- ── LEFT: written content ── -->
     <div class="content-col">
       <h2>What is CSS?</h2>
       <p>CSS (Cascading Style Sheets) is the styling language for the web. HTML gives the page structure, CSS gives it personality. Without it, every site would just be unstyled black text on a white background — which technically works, but nobody wants that.</p>
@@ -64,15 +66,80 @@
       <h3>Selectors &amp; Code</h3>
       <div class="code-block reveal">
         <span class="code-label">CSS</span>
+        <span class="comment">/* element, class, ID — order of specificity */</span>
+        <span class="tag">h1</span> { <span class="attr">color</span>: <span class="val">#4f9cf9</span>; <span class="attr">font-size</span>: <span class="val">2rem</span>; }
+        <span class="tag">.card</span> { <span class="attr">background</span>: <span class="val">#fff</span>; <span class="attr">border-radius</span>: <span class="val">12px</span>; }
+        <span class="tag">#hero</span>  { <span class="attr">min-height</span>: <span class="val">100vh</span>; }
 
+        <span class="comment">/* flexbox nav — row layout, space between items, vertically centred */</span>
+        <span class="tag">.nav</span> {
+          <span class="attr">display</span>: <span class="val">flex</span>;
+          <span class="attr">justify-content</span>: <span class="val">space-between</span>;
+          <span class="attr">align-items</span>: <span class="val">center</span>;
+        }
 
+        <span class="comment">/* mobile — stack vertically below 768px */</span>
+        <span class="tag">@media</span> (<span class="attr">max-width</span>: <span class="val">768px</span>) {
+          <span class="tag">.nav</span> { <span class="attr">flex-direction</span>: <span class="val">column</span>; }
+        }
+
+        <span class="comment">/* CSS variable + hover lift */</span>
+        <span class="tag">:root</span>     { <span class="attr">--blue</span>: <span class="val">#4f9cf9</span>; }
+        <span class="tag">.btn</span>     { <span class="attr">background</span>: <span class="val">var(--blue)</span>; <span class="attr">transition</span>: <span class="val">transform 0.2s</span>; }
+        <span class="tag">.btn:hover</span> { <span class="attr">transform</span>: <span class="val">translateY(-3px)</span>; }
+      </div>
+      <!--Box Model Visual -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">The Box Model · Visual</span>
+        </div>
+        <div class="demo-area" style="text-align:center">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:1rem">Every HTML element is made of four nested boxes. From outside in:</p>
+          <div style="background:rgba(79,156,249,0.06);border:2px dashed rgba(79,156,249,0.3);padding:14px;display:inline-block">
+            <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--css-c);margin-bottom:10px">margin — space outside the border</div>
+            <div style="background:rgba(79,156,249,0.1);border:2px solid rgba(79,156,249,0.4);padding:12px">
+              <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);margin-bottom:8px">border — the visible edge</div>
+              <div style="background:rgba(79,156,249,0.08);padding:12px">
+                <div style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);margin-bottom:8px">padding — space inside the border</div>
+                <div style="background:var(--css-c);padding:10px 22px;display:inline-block">
+                  <span style="color:#fff;font-weight:500;font-size:0.82rem">CONTENT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flexbox live -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Flexbox · Visual Examples</span>
+        </div>
+        <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem"><code style="color:var(--css-c)">justify-content: space-between</code></p>
+          <div style="display:flex;justify-content:space-between;margin-bottom:1.2rem">
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">Item 1</div>
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">Item 2</div>
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">Item 3</div>
+          </div>
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem"><code style="color:var(--css-c)">justify-content: center; gap: 8px</code></p>
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">A</div>
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">B</div>
+            <div style="background:rgba(79,156,249,0.12);border:1px solid rgba(79,156,249,0.3);padding:0.6rem 1rem;font-size:0.75rem;color:var(--css-c);font-weight:500">C</div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- ── RIGHT: demos ── -->
     <div class="demo-col">
 
+      <!-- 1. Theme Picker -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <div class="tc-icon" style="color:var(--css-c);border-color:rgba(79,156,249,0.3);width:32px;height:32px">#</div>
+          <span class="demo-box-title">CSS Theme Picker · Live</span>
           <span class="demo-badge">Interactive</span>
         </div>
         <div class="demo-area">
@@ -93,6 +160,8 @@
             <h4 id="cardName" style="color:#f0c040;font-family:var(--ff-serif);margin-bottom:0.4rem">Midnight Dark</h4>
             <p id="cardDesc" style="font-size:0.8rem;opacity:0.8">Dark bg, golden accent. Updates as you pick.</p>
             <div style="display:flex;gap:8px;justify-content:center;margin-top:1rem;flex-wrap:wrap">
+              <div id="primaryBtn" style="background:#f0c040;color:#1a1a2e;padding:5px 14px;font-size:0.78rem;font-weight:700;cursor:pointer;border-radius:3px">Button</div>
+              <div id="outlineBtn" style="border:2px solid #f0c040;padding:5px 14px;font-size:0.78rem;font-weight:600;color:#f0c040;cursor:pointer;border-radius:3px">Outline</div>
             </div>
           </div>
           <p style="color:var(--text2);font-size:0.72rem;margin-bottom:0.4rem">Active CSS values:</p>
@@ -103,16 +172,49 @@
           </div>
         </div>
         <div class="demo-footer">
+          <strong>How it works:</strong> Clicking a swatch calls a JS function that sets <code>element.style.background</code>, <code>.color</code>, etc. directly — exactly how CSS <code>background-color</code> and <code>color</code> cascade onto child elements in real time.
         </div>
       </div>
 
 
+      <!-- 2. NICHE: CSS Animation Playground -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
+          <span class="demo-box-title">Animation Keyframe Builder</span>
+          <span class="demo-badge">Niche Demo</span>
         </div>
         <div class="demo-area">
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.9rem">Choose properties and watch a live CSS <code style="color:var(--css-c)">@keyframes</code> animation build itself — the code updates to match:</p>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);cursor:pointer">
+              <input type="checkbox" id="animFade" onchange="buildAnim()" checked style="accent-color:var(--css-c)"> fade
+            </label>
+            <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);cursor:pointer">
+              <input type="checkbox" id="animSlide" onchange="buildAnim()" style="accent-color:var(--css-c)"> slide up
+            </label>
+            <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);cursor:pointer">
+              <input type="checkbox" id="animScale" onchange="buildAnim()" style="accent-color:var(--css-c)"> scale
+            </label>
+            <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text2);cursor:pointer">
+              <input type="checkbox" id="animRotate" onchange="buildAnim()" style="accent-color:var(--css-c)"> rotate
+            </label>
           </div>
+          <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem">
+            <label style="font-size:0.7rem;color:var(--text2)">Duration:</label>
+            <input type="range" id="animDur" min="0.3" max="3" step="0.1" value="0.8" oninput="buildAnim();updateDurLabel(this.value)"
+              style="flex:1;accent-color:var(--css-c)"/>
+            <span id="durLabel" style="font-family:var(--ff-mono);font-size:0.75rem;color:var(--css-c);min-width:36px">0.8s</span>
           </div>
+          <!-- preview box -->
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.2rem;text-align:center;margin-bottom:1rem;min-height:90px;display:flex;align-items:center;justify-content:center">
+            <div id="animTarget" style="background:var(--css-c);color:#fff;padding:0.6rem 1.4rem;font-size:0.82rem;font-weight:600;border-radius:4px">Preview Box</div>
+          </div>
+          <button onclick="replayAnim()" style="background:var(--css-c);color:#070b0f;border:none;padding:0.45rem 1.2rem;font-family:var(--ff-mono);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;cursor:pointer;border-radius:4px;margin-bottom:0.8rem">▶ Replay Animation</button>
+          <!-- generated code -->
+          <div id="animCode" class="code-block" style="font-size:0.72rem;margin:0;white-space:pre"></div>
+        </div>
+        <div class="demo-footer">
+          <strong>How it works:</strong> Checking boxes builds a <code>@keyframes</code> rule dynamically and applies it using <code>element.style.animation</code>. Each replay forces a reflow to restart the animation from scratch.
         </div>
       </div>
 
@@ -123,8 +225,10 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya · Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
+        <p>📧 subashchalise0@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -135,8 +239,133 @@
 <script src="main.js"></script>
 <script>
 
+// ── THEME PICKER
+function pickTheme(bg, textCol, accent, name, desc, clickedSwatch) {
+  var card    = document.getElementById('cardPreview');
+  var title   = document.getElementById('cardName');
+  var summary = document.getElementById('cardDesc');
+  var pBtn    = document.getElementById('primaryBtn');
+  var oBtn    = document.getElementById('outlineBtn');
+  var props   = document.getElementById('propList');
+
+  card.style.background  = bg;
+  card.style.color       = textCol;
+  title.style.color      = accent;
+  title.textContent      = name;
+  summary.textContent    = desc + '. Updates as you pick.';
+  pBtn.style.background  = accent;
+  pBtn.style.color       = bg;
+  oBtn.style.borderColor = accent;
+  oBtn.style.color       = accent;
+
+  props.innerHTML =
+    '<span class="prop-tag">background: ' + bg      + '</span>' +
+    '<span class="prop-tag">color: '      + textCol + '</span>' +
+    '<span class="prop-tag">accent: '     + accent  + '</span>';
+
+  // update active swatch highlight
+  document.querySelectorAll('.swatch').forEach(function(s) { s.classList.remove('active'); });
+  clickedSwatch.classList.add('active');
+}
+
+// ── SPECIFICITY CALCULATOR
+function calcSpec(sel) {
+  if (!sel.trim()) {
+    document.getElementById('specA').textContent = '0';
+    document.getElementById('specB').textContent = '0';
+    document.getElementById('specC').textContent = '0';
+    document.getElementById('specScore').textContent = '(0, 0, 0)';
+    document.getElementById('specNote').textContent  = '';
+    return;
   }
 
+  var s = sel
+    .replace(/::?[a-zA-Z-]+(?:\([^)]*\))?/g, function(m){ return m.startsWith('::') ? '' : '£'; })
+    .replace(/#[a-zA-Z_-][\w-]*/g, '§')
+    .replace(/\.[a-zA-Z_-][\w-]*/g, '£')
+    .replace(/\[[^\]]*\]/g, '£')
+    .replace(/[a-zA-Z][\w-]*/g, '¢')
+    .replace(/\*/g, '');
+
+  var a  = (s.match(/§/g) || []).length;
+  var b  = (s.match(/£/g) || []).length;
+  var cc = (s.match(/¢/g) || []).length;
+
+  document.getElementById('specA').textContent = a;
+  document.getElementById('specB').textContent = b;
+  document.getElementById('specC').textContent = cc;
+
+  var note = a > 0 ? 'Heavy — hard to override.' : b > 2 ? 'Moderately specific.' : 'Easy to override.';
+  document.getElementById('specScore').textContent = '(' + a + ', ' + b + ', ' + cc + ')';
+  document.getElementById('specNote').textContent  = note;
+}
+
+// ── ANIMATION PLAYGROUND
+var currentAnimName = 'su-demo';
+var currentStyleTag = null;
+
+function updateDurLabel(v) {
+  document.getElementById('durLabel').textContent = parseFloat(v).toFixed(1) + 's';
+}
+
+function buildAnim() {
+  var fade   = document.getElementById('animFade').checked;
+  var slide  = document.getElementById('animSlide').checked;
+  var scale  = document.getElementById('animScale').checked;
+  var rotate = document.getElementById('animRotate').checked;
+  var dur    = parseFloat(document.getElementById('animDur').value).toFixed(1);
+
+  // Build keyframe from/to strings
+  var fromParts = [], toParts = [];
+  if (fade)   { fromParts.push('opacity: 0');      toParts.push('opacity: 1'); }
+  if (slide)  { fromParts.push('translateY(30px)'); toParts.push('translateY(0)'); }
+  if (scale)  { fromParts.push('scale(0.6)');       toParts.push('scale(1)'); }
+  if (rotate) { fromParts.push('rotate(-180deg)');  toParts.push('rotate(0deg)'); }
+
+  // Merge transform parts
+  var fromTransform = [], toTransform = [];
+  if (slide)  { fromTransform.push('translateY(30px)'); toTransform.push('translateY(0)'); }
+  if (scale)  { fromTransform.push('scale(0.6)');       toTransform.push('scale(1)'); }
+  if (rotate) { fromTransform.push('rotate(-180deg)');  toTransform.push('rotate(0deg)'); }
+
+  var fromCSS = (fade ? 'opacity: 0;' : '') + (fromTransform.length ? '\n    transform: ' + fromTransform.join(' ') + ';' : '');
+  var toCSS   = (fade ? 'opacity: 1;' : '') + (toTransform.length   ? '\n    transform: ' + toTransform.join(' ')   + ';' : '');
+
+  if (!fromCSS && !toCSS) {
+    fromCSS = '/* select at least one property above */';
+    toCSS   = '/* nothing to animate */';
+  }
+
+  // Inject live keyframe into page
+  if (currentStyleTag) currentStyleTag.remove();
+  currentStyleTag = document.createElement('style');
+  currentStyleTag.textContent = '@keyframes ' + currentAnimName + ' { from { ' + fromCSS + ' } to { ' + toCSS + ' } }';
+  document.head.appendChild(currentStyleTag);
+
+  // Show generated code
+  var codeLines = '@keyframes su-demo {\n  from {\n    ' + fromCSS.replace(/;/g,';\n    ').trim() + '\n  }\n  to {\n    ' + toCSS.replace(/;/g,';\n    ').trim() + '\n  }\n}\n\n.element {\n  animation: su-demo ' + dur + 's ease both;\n}';
+  document.getElementById('animCode').textContent = codeLines;
+
+  replayAnim();
+}
+
+function replayAnim() {
+  var fade   = document.getElementById('animFade').checked;
+  var slide  = document.getElementById('animSlide').checked;
+  var scale  = document.getElementById('animScale').checked;
+  var rotate = document.getElementById('animRotate').checked;
+  var dur    = parseFloat(document.getElementById('animDur').value).toFixed(1);
+  var target = document.getElementById('animTarget');
+
+  target.style.animation = 'none';
+  void target.offsetWidth; // force reflow to restart
+  if (fade || slide || scale || rotate) {
+    target.style.animation = currentAnimName + ' ' + dur + 's ease both';
+  }
+}
+
+// initialise on load
+buildAnim();
 </script>
 </body>
 </html>
