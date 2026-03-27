@@ -267,9 +267,7 @@ code { font-family: var(--ff-mono); font-size: 0.88em; }
 .stat-num { font-family: var(--ff-display); font-size: 3.2rem; color: var(--accent); line-height: 1; display: block; margin-bottom: 0.4rem; }
 .stat-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text2); }
 
-/* ── TOPIC CARD GRID
-   Fixed 3-column layout.
-   Each card is a full <a> element so the whole thing is clickable.
+/* ── TOPIC CARD GRID- Each card is a full <a> element so the whole thing is clickable.
 */
 .topics-section { padding: 6rem 4rem; }
 .section-eyebrow {
