@@ -1,250 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bootstrap | Subash Upadhyaya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="fullstack.html">Full Stack</a></li>
-      <li><a href="html.html">HTML</a></li>
-      <li><a href="css.html">CSS</a></li>
-      <li><a href="bootstrap.html" class="active">Bootstrap</a></li>
-      <li><a href="javascript.html">JavaScript</a></li>
-      <li><a href="about.html">About</a></li>
-      
-      <li><a href="about.html">About</a></li>
-      
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
-  </div>
-</nav>
+<div class="main-wrap">
 
-<section class="topic-hero">
-  <div class="topic-hero-bg">BS</div>
-  <div class="topic-hero-inner">
-    <div class="topic-breadcrumb"><a href="index.html">Home</a> / Bootstrap</div>
-    <div class="section-label" style="color:var(--bs-c)">CSS Framework</div>
-    <h1>Bootstrap <span style="color:var(--bs-c)">Framework</span></h1>
-    <p>A free, open-source CSS framework with a grid system, pre-built components, and utility classes by the help of which we can build professional, responsive sites faster.</p>
-    <p>A free, open-source CSS framework with a grid system, pre-built components, and utility classes by the help of which we can build professional, responsive sites faster.</p>
-  </div>
-</section>
+  <section class="page-hero">
+    <div class="page-hero-bg">BS</div>
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> Bootstrap</div>
+      <div class="page-topic-label" style="color:var(--bs-c)">CSS Framework</div>
+      <h1>Bootstrap <span style="color:var(--bs-c)">Framework</span></h1>
+      <p>Bootstrap is the most widely used CSS framework around. It gives you a 12-column grid, ready-made components, and responsive utilities so you're not writing the same navbar and button code from scratch every time.</p>
+    </div>
+  </section>
 
-<main class="topic-body">
-  <div class="two-col">
-    <!-- LEFT -->
-    <div class="content-block">
+  <div class="topic-body">
+
+    <!-- left: written content -->
+    <div class="content-col">
       <h2>What is Bootstrap?</h2>
-      <p>Bootstrap is the world's most popular CSS framework, originally created by Twitter. It gives you a ready-made set of styles, components, and a powerful grid system so you don't need to write everything from scratch.</p>
-      <p>It's <strong>mobile-first</strong> by default as the styles apply to small screens first, and you use breakpoints to adjust for larger ones.</p>
-      <p>It's <strong>mobile-first</strong> by default as the styles apply to small screens first, and you use breakpoints to adjust for larger ones.</p>
+      <p>Bootstrap is a free, open-source CSS framework — originally built at Twitter, now independent. The idea is to solve the boring, repetitive parts of web UI so you can focus on the actual design decisions.</p>
+      <p>Everything is built around a <strong>12-column grid</strong> and a set of <em>utility classes</em> that map directly to CSS properties. Knowing Bootstrap is genuinely useful because it's everywhere — most company codebases, templates, and dashboards use some version of it.</p>
 
-      <h3>What Bootstrap Gives You</h3>
-      <div class="concept-grid">
+      <h3>Core Concepts</h3>
+      <div class="concept-grid reveal">
         <div class="concept-card">
-          <div class="cc-icon">📐</div>
+          <div class="cc-icon">⬜</div>
           <div class="cc-title">12-Column Grid</div>
-          <div class="cc-desc">Divide any row into up to 12 columns. Use <code style="color:var(--bs-c)">col-6</code> for half width, <code style="color:var(--bs-c)">col-4</code> for a third. Columns flex automatically.</div>
-        </div>
-        <div class="concept-card">
-          <div class="cc-icon">🧩</div>
-          <div class="cc-title">Components</div>
-          <div class="cc-desc">Navbars, cards, buttons, modals, badges, alerts, carousels — all pre-styled and ready to drop in.</div>
-        </div>
-        <div class="concept-card">
-          <div class="cc-icon">🛠</div>
-          <div class="cc-title">Utility Classes</div>
-          <div class="cc-desc">Quick styling without writing CSS: <code style="color:var(--bs-c)">mt-3</code> (margin-top), <code style="color:var(--bs-c)">text-center</code>, <code style="color:var(--bs-c)">d-flex</code>, <code style="color:var(--bs-c)">fw-bold</code>.</div>
+          <div class="cc-desc">The row width is divided into 12 equal slots. Elements claim however many they need: <code style="color:var(--bs-c)">col-6</code> is half, <code style="color:var(--bs-c)">col-4</code> is a third, <code style="color:var(--bs-c)">col-3</code> is a quarter.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">📱</div>
           <div class="cc-title">Responsive Breakpoints</div>
-          <div class="cc-desc">Five breakpoints: <code style="color:var(--bs-c)">sm</code>, <code style="color:var(--bs-c)">md</code>, <code style="color:var(--bs-c)">lg</code>, <code style="color:var(--bs-c)">xl</code>, <code style="color:var(--bs-c)">xxl</code>. Mix them: <code style="color:var(--bs-c)">col-12 col-md-6 col-lg-4</code>.</div>
+          <div class="cc-desc">Stacking classes changes layout per screen size: <code style="color:var(--bs-c)">col-12 col-md-6</code> means full width on mobile, half width on tablets and above.</div>
         </div>
         <div class="concept-card">
-          <div class="cc-icon">🎨</div>
-          <div class="cc-title">Colour System</div>
-          <div class="cc-desc">Semantic colours: <code style="color:var(--bs-c)">primary</code>, <code style="color:var(--bs-c)">success</code>, <code style="color:var(--bs-c)">danger</code>, <code style="color:var(--bs-c)">warning</code>. Apply via classes or SASS variables.</div>
+          <div class="cc-icon">🧱</div>
+          <div class="cc-title">Components</div>
+          <div class="cc-desc">Navbar, Card, Modal, Alert, Badge, Carousel, Accordion — pre-built UI blocks that just work out of the box. Add the class names, done.</div>
         </div>
         <div class="concept-card">
-          <div class="cc-icon">✍️</div>
-          <div class="cc-title">Forms &amp; Validation</div>
-          <div class="cc-desc">Styled form controls, labels, groups, and built-in validation states — all consistent across browsers.</div>
+          <div class="cc-icon">🛠</div>
+          <div class="cc-title">Utility Classes</div>
+          <div class="cc-desc">Single-purpose helpers: <code style="color:var(--bs-c)">mt-3</code> (margin-top), <code style="color:var(--bs-c)">d-flex</code>, <code style="color:var(--bs-c)">text-center</code>, <code style="color:var(--bs-c)">fw-bold</code>. You compose your layout from these instead of writing custom CSS for everything.</div>
         </div>
       </div>
 
-      <h3>How to Include Bootstrap</h3>
-      <div class="code-snippet">
-<span class="comment">&lt;!-- Option 1: CDN link in &lt;head&gt; --&gt;</span>
-<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span>
-  <span class="attr">href</span>=<span class="val">"https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e3818c8c979097918293a3d6cdd0cdd3">[email&#160;protected]</a>/dist/css/bootstrap.min.css"</span><span class="tag">/&gt;</span>
-  <span class="attr">href</span>=<span class="val">"https://cdn.jsdelivr.net/npm/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e3818c8c979097918293a3d6cdd0cdd3">[email&#160;protected]</a>/dist/css/bootstrap.min.css"</span><span class="tag">/&gt;</span>
-
-<span class="comment">&lt;!-- Option 2: npm install --&gt;</span>
-<span class="tag">npm install bootstrap</span>
-
-<span class="comment">&lt;!-- Basic grid usage --&gt;</span>
+      <h3>Grid Syntax</h3>
+      <div class="code-block reveal">
+        <span class="code-label">HTML + Bootstrap</span>
+<span class="comment">&lt;!-- structure is always: Container → Row → Columns --&gt;</span>
 <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container"</span><span class="tag">&gt;</span>
   <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6 col-lg-4"</span><span class="tag">&gt;</span>Card<span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6 col-lg-4"</span><span class="tag">&gt;</span>Card<span class="tag">&lt;/div&gt;</span>
-    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-12 col-lg-4"</span><span class="tag">&gt;</span>Card<span class="tag">&lt;/div&gt;</span>
+
+    <span class="comment">&lt;!-- stacks on mobile (col-12), splits 50/50 on md and above --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Left<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Right<span class="tag">&lt;/div&gt;</span>
+
+    <span class="comment">&lt;!-- equal thirds on lg — good for feature/service cards --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 1<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 2<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 3<span class="tag">&lt;/div&gt;</span>
+
   <span class="tag">&lt;/div&gt;</span>
 <span class="tag">&lt;/div&gt;</span>
-      </div>
 
-      <div class="info-box">
-        <h4>Bootstrap vs Writing CSS Yourself</h4>
+<span class="comment">&lt;!-- utility classes for spacing and flex layout --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex justify-content-center gap-3 mt-4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-primary"</span><span class="tag">&gt;</span>Primary<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-outline-secondary"</span><span class="tag">&gt;</span>Outline<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/div&gt;</span></div>
+
+      <h3>Why Use It?</h3>
+      <div class="info-box reveal">
+        <h4>Reasons Bootstrap is worth knowing</h4>
         <ul>
-          <li><strong>Speed</strong> — Prototype in hours instead of days</li>
-          <li><strong>Consistency</strong> — Uniform look across all browsers</li>
-          <li><strong>Community</strong> — Massive ecosystem of themes and plugins</li>
-          <li><strong>Trade-off</strong> — Can look "generic" if not customised</li>
+          <li>Responsive layouts take minutes instead of hours — the grid does the heavy lifting</li>
+          <li>Consistent cross-browser behaviour without writing browser-specific fixes</li>
+          <li>Huge ecosystem: themes, templates, and third-party component libraries</li>
+          <li>Prototyping is much faster — great when you want to test a layout idea quickly</li>
+          <li>The docs have live examples for almost everything, very easy to learn from</li>
         </ul>
       </div>
     </div>
 
-    <!-- RIGHT: DEMO -->
-    <div>
-      <div class="demo-box">
-        <div class="demo-header">
-          <div class="tc-icon bs-icon" style="width:30px;height:30px;font-size:0.85rem;border-radius:8px">B</div>
-          <h3>Grid Visualiser — Live Demo</h3>
+    <!-- right: interactive demo -->
+    <div class="demo-col">
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <div class="tc-icon" style="color:var(--bs-c);border-color:rgba(167,139,250,0.3);width:32px;height:32px">B</div>
+          <span class="demo-box-title">12-Column Grid Visualiser</span>
           <span class="demo-badge">Interactive</span>
         </div>
         <div class="demo-area">
-          <p style="color:var(--text2);font-size:0.82rem;margin-bottom:1rem">Drag the sliders to change how many of the 12 columns each element occupies:</p>
-          <div class="bs-grid-demo">
-            <div style="display:flex;gap:4px;margin-bottom:6px">
-              <div id="col1" class="bs-col" style="flex:4">col-4</div>
-              <div id="col2" class="bs-col" style="flex:8">col-8</div>
-            </div>
-            <div style="display:flex;gap:4px;margin-bottom:8px">
-              <div id="col3" class="bs-col" style="flex:3">col-3</div>
-              <div id="col4" class="bs-col" style="flex:6">col-6</div>
-              <div id="col5" class="bs-col" style="flex:3">col-3</div>
-            </div>
-            <div style="display:flex;gap:4px;margin-bottom:1rem">
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-              <div style="flex:1;height:5px;background:rgba(139,92,246,0.18);border-radius:3px"></div>
-            </div>
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:1rem">Click a layout preset to see how the 12 columns get divided up:</p>
+
+          <!-- preset buttons -->
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            <button class="js-btn" onclick="applyLayout([12])" style="color:var(--bs-c)">12</button>
+            <button class="js-btn" onclick="applyLayout([6,6])">6+6</button>
+            <button class="js-btn" onclick="applyLayout([4,4,4])">4+4+4</button>
+            <button class="js-btn" onclick="applyLayout([3,3,3,3])">3×4</button>
+            <button class="js-btn" onclick="applyLayout([8,4])">8+4</button>
+            <button class="js-btn" onclick="applyLayout([9,3])">9+3</button>
+            <button class="js-btn" onclick="applyLayout([2,2,2,2,2,2])">2×6</button>
+            <button class="js-btn" onclick="applyLayout([5,7])">5+7</button>
           </div>
-          <div class="col-slider-group">
-            <label>Row 1 — Left:</label>
-            <input type="range" class="col-slider" min="1" max="11" value="4" id="slider1" oninput="updateGrid()"/>
-            <span class="col-display" id="d1">col-4</span>
+
+          <!-- 12 individual column markers — always visible as reference -->
+          <div class="bs-grid-demo" id="colTrack">
+            <div class="bs-col">1</div><div class="bs-col">2</div><div class="bs-col">3</div>
+            <div class="bs-col">4</div><div class="bs-col">5</div><div class="bs-col">6</div>
+            <div class="bs-col">7</div><div class="bs-col">8</div><div class="bs-col">9</div>
+            <div class="bs-col">10</div><div class="bs-col">11</div><div class="bs-col">12</div>
           </div>
-          <div class="col-slider-group">
-            <label>Row 2 — Left:</label>
-            <input type="range" class="col-slider" min="1" max="10" value="3" id="slider2" oninput="updateGrid()"/>
-            <span class="col-display" id="d2">col-3</span>
+
+          <!-- live layout preview — rebuilt on every button click -->
+          <div id="layoutView" style="display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:8px">
+            <div style="grid-column:span 12;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);padding:1rem;text-align:center;font-size:0.75rem;color:var(--bs-c);font-weight:500">col-12</div>
           </div>
-          <div class="col-slider-group">
-            <label>Row 2 — Mid:</label>
-            <input type="range" class="col-slider" min="1" max="10" value="6" id="slider3" oninput="updateGrid()"/>
-            <span class="col-display" id="d3">col-6</span>
-          </div>
-          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;margin-top:0.7rem;font-family:'Source Code Pro',monospace;font-size:0.78rem">
-            <span style="color:var(--text2)">Classes: </span>
-            <span id="classOutput" style="color:var(--bs-c)">col-4/col-8 | col-3 col-6 col-3</span>
-          </div>
+
+          <p id="layoutNote" style="color:var(--text2);font-size:0.72rem;margin-top:0.8rem;font-family:var(--ff-mono)">
+            class="col-12" — uses all 12 columns (full width)
+          </p>
         </div>
-        <div class="demo-explanation">
-          <strong>How it works:</strong> Bootstrap uses flexbox internally. Each <code>col-N</code> class sets the element's flex value so N columns out of 12 are taken up. Remaining columns fill automatically.
+        <div class="demo-footer">
+          <strong>How it works:</strong> The row divides its width into 12 equal units. Each column spans some of those units. Numbers in a row should add up to 12 for a clean layout — going over causes wrapping.
         </div>
       </div>
 
-      <!-- Components preview -->
-      <div class="demo-box" style="margin-top:1.4rem">
-        <div class="demo-header"><h3>Bootstrap Components — Reference</h3></div>
-        <div class="demo-area" style="display:flex;flex-direction:column;gap:1rem">
-          <div>
-            <p style="color:var(--text2);font-size:0.78rem;margin-bottom:0.55rem">Buttons: <code style="font-family:'Source Code Pro',monospace;color:var(--bs-c)">btn btn-primary</code></p>
-            <div style="display:flex;gap:7px;flex-wrap:wrap">
-              <button style="background:#0d6efd;color:#fff;border:none;padding:5px 14px;border-radius:6px;font-size:0.82rem;cursor:pointer">Primary</button>
-              <button style="background:#198754;color:#fff;border:none;padding:5px 14px;border-radius:6px;font-size:0.82rem;cursor:pointer">Success</button>
-              <button style="background:#dc3545;color:#fff;border:none;padding:5px 14px;border-radius:6px;font-size:0.82rem;cursor:pointer">Danger</button>
-              <button style="background:transparent;color:#0d6efd;border:2px solid #0d6efd;padding:5px 14px;border-radius:6px;font-size:0.82rem;cursor:pointer">Outline</button>
+      <!-- breakpoints reference -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Breakpoints Reference</span>
+        </div>
+        <div class="demo-area">
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border)">
+            <div style="display:flex;align-items:center;gap:1rem;background:var(--bg);padding:0.7rem 1rem">
+              <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--bs-c);width:50px">xs</span>
+              <span style="font-size:0.75rem;color:var(--text2)">&lt; 576px — mobile portrait</span>
+              <span style="margin-left:auto;font-size:0.68rem;color:var(--text2)">col-</span>
             </div>
-          </div>
-          <div>
-            <p style="color:var(--text2);font-size:0.78rem;margin-bottom:0.55rem">Badges: <code style="font-family:'Source Code Pro',monospace;color:var(--bs-c)">badge bg-primary</code></p>
-            <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center">
-              <span style="background:#0d6efd;color:#fff;padding:2px 9px;border-radius:50px;font-size:0.75rem;font-weight:700">Primary</span>
-              <span style="background:#198754;color:#fff;padding:2px 9px;border-radius:50px;font-size:0.75rem;font-weight:700">Success</span>
-              <span style="background:#ffc107;color:#000;padding:2px 9px;border-radius:50px;font-size:0.75rem;font-weight:700">Warning</span>
-              <span style="background:#6c757d;color:#fff;padding:2px 9px;border-radius:50px;font-size:0.75rem;font-weight:700">Secondary</span>
+            <div style="display:flex;align-items:center;gap:1rem;background:var(--bg3);padding:0.7rem 1rem">
+              <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--bs-c);width:50px">sm</span>
+              <span style="font-size:0.75rem;color:var(--text2)">≥ 576px — mobile landscape</span>
+              <span style="margin-left:auto;font-size:0.68rem;color:var(--text2)">col-sm-</span>
             </div>
-          </div>
-          <div>
-            <p style="color:var(--text2);font-size:0.78rem;margin-bottom:0.55rem">Alert: <code style="font-family:'Source Code Pro',monospace;color:var(--bs-c)">alert alert-success</code></p>
-            <div style="background:#d1e7dd;color:#0f5132;border:1px solid #a3cfbb;padding:0.55rem 0.9rem;border-radius:6px;font-size:0.8rem">✅ Your changes have been saved successfully.</div>
+            <div style="display:flex;align-items:center;gap:1rem;background:var(--bg);padding:0.7rem 1rem">
+              <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--bs-c);width:50px">md</span>
+              <span style="font-size:0.75rem;color:var(--text2)">≥ 768px — tablet</span>
+              <span style="margin-left:auto;font-size:0.68rem;color:var(--text2)">col-md-</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;background:var(--bg3);padding:0.7rem 1rem">
+              <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--bs-c);width:50px">lg</span>
+              <span style="font-size:0.75rem;color:var(--text2)">≥ 992px — desktop</span>
+              <span style="margin-left:auto;font-size:0.68rem;color:var(--text2)">col-lg-</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;background:var(--bg);padding:0.7rem 1rem">
+              <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--bs-c);width:50px">xl</span>
+              <span style="font-size:0.75rem;color:var(--text2)">≥ 1200px — wide desktop</span>
+              <span style="margin-left:auto;font-size:0.68rem;color:var(--text2)">col-xl-</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
 
-<!-- ===== FOOTER ===== -->
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="nav-logo">SU<span class="dot">.</span></div>
-      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
-    </div>
-    <div class="footer-right">
-      <p>📧 subashchalise064@gmail.com</p>
-      <p>📍 Chitwan, Nepal</p>
-    </div>
   </div>
-  <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
-</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya — Full Stack Development Portfolio</div>
+      </div>
+      <div class="footer-contact">
+        <p>📧 subashchalise064@gmail.com</p>
+        <p>📍 Chitwan, Nepal</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Subash Upadhyaya. All rights reserved.</div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
 <script>
-function updateGrid() {
-  const s1 = parseInt(document.getElementById('slider1').value);
-  const s2 = parseInt(document.getElementById('slider2').value);
-  const s3 = parseInt(document.getElementById('slider3').value);
-  const right1 = 12 - s1;
-  const right2 = Math.max(1, 12 - s2 - s3);
-  document.getElementById('col1').style.flex = s1;
-  document.getElementById('col1').textContent = `col-${s1}`;
-  document.getElementById('col2').style.flex = right1;
-  document.getElementById('col2').textContent = `col-${right1}`;
-  document.getElementById('d1').textContent = `col-${s1}`;
-  document.getElementById('col3').style.flex = s2;
-  document.getElementById('col3').textContent = `col-${s2}`;
-  document.getElementById('col4').style.flex = s3;
-  document.getElementById('col4').textContent = `col-${s3}`;
-  document.getElementById('col5').style.flex = right2;
-  document.getElementById('col5').textContent = `col-${right2}`;
-  document.getElementById('d2').textContent = `col-${s2}`;
-  document.getElementById('d3').textContent = `col-${s3}`;
-  document.getElementById('classOutput').textContent = `col-${s1}/col-${right1} | col-${s2} col-${s3} col-${right2}`;
-}
+
+  // different opacity levels so adjacent columns look distinct
+  var shades = [
+    'rgba(167,139,250,0.18)',
+    'rgba(167,139,250,0.26)',
+    'rgba(167,139,250,0.12)',
+    'rgba(167,139,250,0.22)',
+  ];
+
+  // rebuild the layout preview to match the chosen column split
+  function applyLayout(colWidths) {
+    var view = document.getElementById('layoutView');
+    view.innerHTML = '';  // wipe previous layout
+
+    colWidths.forEach(function (w, idx) {
+      var cell = document.createElement('div');
+      cell.style.cssText =
+        'grid-column: span ' + w + ';' +
+        'background: ' + shades[idx % shades.length] + ';' +
+        'border: 1px solid rgba(167,139,250,0.3);' +
+        'padding: 1rem 0.5rem;' +
+        'text-align: center;' +
+        'font-size: 0.72rem;' +
+        'color: var(--bs-c);' +
+        'font-weight: 500;' +
+        'transition: background 0.3s';
+      cell.textContent = 'col-' + w;
+      view.appendChild(cell);
+    });
+
+    // show the Bootstrap class string below the preview
+    var used  = colWidths.reduce(function (sum, n) { return sum + n; }, 0);
+    var names = colWidths.map(function (w) { return 'col-' + w; }).join(' + ');
+    document.getElementById('layoutNote').textContent =
+      names + ' — ' + used + '/12 columns used';
+  }
+
 </script>
 </body>
 </html>

@@ -1,294 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Full Stack | Subash Upadhyaya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">SU<span class="dot">.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="fullstack.html" class="active">Full Stack</a></li>
-      <li><a href="html.html">HTML</a></li>
-      <li><a href="css.html">CSS</a></li>
-      <li><a href="bootstrap.html">Bootstrap</a></li>
-      <li><a href="javascript.html">JavaScript</a></li>
-      <li><a href="about.html">About</a></li>
-      
-      <li><a href="about.html">About</a></li>
-      
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">🌙</button>
-  </div>
-</nav>
+<div class="main-wrap">
 
-<section class="topic-hero">
-  <div class="topic-hero-bg">FS</div>
-  <div class="topic-hero-inner">
-    <div class="topic-breadcrumb"><a href="index.html">Home</a> / Full Stack</div>
-    <div class="section-label" style="color:var(--fs-c)">Web Architecture</div>
-    <h1>Full Stack <span style="color:var(--fs-c)">Development</span></h1>
-    <p>Full stack means you can build both what users see and what happens behind the scenes by connecting the browser to a server, a database, and everything in between.</p>
-    <p>Full stack means you can build both what users see and what happens behind the scenes by connecting the browser to a server, a database, and everything in between.</p>
-  </div>
-</section>
+  <section class="page-hero">
+    <div class="page-hero-bg">FS</div>
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb"><a href="index.html">Home</a> Full Stack</div>
+      <div class="page-topic-label" style="color:var(--fs-c)">Web Architecture</div>
+      <h1>Full Stack <span style="color:var(--fs-c)">Development</span></h1>
+      <p>Full stack means being able to build both sides — the interface people interact with, and the server doing the work behind it. Connecting those two things is where it gets interesting.</p>
+    </div>
+  </section>
 
-<main class="topic-body">
-  <div class="two-col">
-    <!-- LEFT -->
-    <div class="content-block">
+  <div class="topic-body">
+
+    <!-- left: written content -->
+    <div class="content-col">
       <h2>The Full Picture</h2>
-      <p>A web application has three major layers. A full stack developer understands and builds all three, making them work together as one product.</p>
+      <p>A web application has three main layers. A full stack developer understands all three and can work across them though most people eventually specialise once they know enough to choose.</p>
 
-      <div class="concept-grid">
+      <div class="concept-grid reveal">
         <div class="concept-card">
           <div class="cc-icon">🖥</div>
           <div class="cc-title">Front End</div>
-          <div class="cc-desc">Everything the user sees and interacts with: HTML structure, CSS styling, JavaScript behaviour. Built with React, Vue, or vanilla JS.</div>
+          <div class="cc-desc">What users see and interact with. HTML for structure, CSS for appearance, JavaScript for behaviour. React, Vue, and Svelte are popular frameworks built on top of this.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">⚙️</div>
           <div class="cc-title">Back End</div>
-          <div class="cc-desc">The server that receives requests, runs business logic, and sends back data. Built with Python, PHP, Node.js or Ruby.</div>
-          <div class="cc-desc">The server that receives requests, runs business logic, and sends back data. Built with Python, PHP, Node.js or Ruby.</div>
+          <div class="cc-desc">The server that handles requests, runs business logic, and talks to the database. Could be PHP, Node.js, Python, or many others — the browser never touches this code directly.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🗄</div>
           <div class="cc-title">Database</div>
-          <div class="cc-desc">Persistent storage for all the app's data like users, posts, reactions,comments. Options include MySQL/PostgreSQL (SQL) and MongoDB (NoSQL).</div>
-          <div class="cc-desc">Persistent storage for all the app's data like users, posts, reactions,comments. Options include MySQL/PostgreSQL (SQL) and MongoDB (NoSQL).</div>
+          <div class="cc-desc">Where everything gets stored — user accounts, posts, settings. SQL databases like MySQL use tables and rows. NoSQL like MongoDB uses documents that look like JSON objects.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🔌</div>
           <div class="cc-title">REST APIs</div>
-          <div class="cc-desc">APIs define how the front end talks to the back end. A REST API uses HTTP methods: GET (read), POST (create), PUT (update), DELETE.</div>
+          <div class="cc-desc">The contract between front and back end. Uses HTTP verbs: GET (read), POST (create), PUT/PATCH (update), DELETE (remove). Returns JSON the browser can use.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🔐</div>
           <div class="cc-title">Authentication</div>
-          <div class="cc-desc">Verifying user identity using passwords, tokens (JWT), or third-party providers (Google OAuth). Sessions keep users logged in.</div>
+          <div class="cc-desc">Verifying who someone is. Passwords get hashed, JWT tokens confirm sessions, OAuth lets users log in via Google/GitHub. Sessions keep users logged in across requests.</div>
         </div>
         <div class="concept-card">
           <div class="cc-icon">🚀</div>
           <div class="cc-title">Deployment</div>
-          <div class="cc-desc">Getting your app live. Front end on Netlify or Vercel; back end on Heroku, Render, or a VPS. Environment variables keep secrets safe.</div>
+          <div class="cc-desc">Getting the app online. Static front end goes to Netlify or Vercel. Back end needs a server — Render, Railway, or a VPS. Environment variables keep secrets out of code.</div>
         </div>
       </div>
 
       <h3>How a Request Works</h3>
-      <div class="stack-flow">
+      <div class="stack-flow reveal">
         <div class="sf-step">
           <div class="sf-num">1</div>
-          <div class="sf-step-content">
-            <strong>User Action</strong>
-            <p>User clicks a button or submits a form in the browser (front end).</p>
-          </div>
+          <div><strong>User Action</strong><p>User clicks something — submits a form, loads a page, hits a button. The browser is ready to do something.</p></div>
         </div>
-        <div class="sf-connector"></div>
         <div class="sf-step">
           <div class="sf-num">2</div>
-          <div class="sf-step-content">
-            <strong>HTTP Request</strong>
-            <p>JavaScript sends a <code style="color:var(--fs-c)">fetch()</code> request to the server: <code style="color:var(--fs-c)">GET /api/users</code>.</p>
-          </div>
+          <div><strong>HTTP Request</strong><p>JavaScript fires a <code style="color:var(--fs-c)">fetch()</code> call — something like <code style="color:var(--fs-c)">GET /api/users</code>. This leaves the browser and travels over the network.</p></div>
         </div>
-        <div class="sf-connector"></div>
         <div class="sf-step">
           <div class="sf-num">3</div>
-          <div class="sf-step-content">
-            <strong>Server Processing</strong>
-            <p>PHP receives the request, validates it, then queries the database.</p>
-            <p>PHP receives the request, validates it, then queries the database.</p>
-          </div>
+          <div><strong>Server Processing</strong><p>PHP or Node.js receives the request, checks it's valid, authenticates if needed, then works out what data is required.</p></div>
         </div>
-        <div class="sf-connector"></div>
         <div class="sf-step">
           <div class="sf-num">4</div>
-          <div class="sf-step-content">
-            <strong>Database Query</strong>
-            <p>MySQL or MongoDB finds and returns the matching data to the server.</p>
-          </div>
+          <div><strong>Database Query</strong><p>Server queries MySQL or MongoDB. The database runs the query and sends back matching records.</p></div>
         </div>
-        <div class="sf-connector"></div>
         <div class="sf-step">
           <div class="sf-num">5</div>
-          <div class="sf-step-content">
-            <strong>HTTP Response</strong>
-            <p>Server sends back a JSON response: <code style="color:var(--fs-c)">&#123; "status": 200, "data": [...] &#125;</code>.</p>
-          </div>
+          <div><strong>HTTP Response</strong><p>Server sends JSON back: <code style="color:var(--fs-c)">{ "status": 200, "data": [...] }</code>. The browser's JavaScript takes it from there.</p></div>
         </div>
-        <div class="sf-connector"></div>
-        <div class="sf-step">
-          <div class="sf-num">6</div>
-          <div class="sf-step-content">
-            <strong>DOM Update</strong>
-            <p>JavaScript receives the JSON, then updates the page without a full reload.</p>
-          </div>
-        </div>
+      </div>
+
+      <h3>Common Stacks</h3>
+      <div class="info-box reveal">
+        <h4>Popular Tech Combinations</h4>
+        <ul>
+          <li><strong>MERN</strong> — MongoDB, Express, React, Node.js. All JavaScript, front to back.</li>
+          <li><strong>MEAN</strong> — Same but Angular instead of React. More structured, more opinionated.</li>
+          <li><strong>LAMP</strong> — Linux, Apache, MySQL, PHP. What most shared hosting runs. What I'm learning with.</li>
+          <li><strong>JAMstack</strong> — JavaScript, APIs, Markup. Mostly serverless, content pulled from APIs at build time.</li>
+        </ul>
       </div>
     </div>
 
-    <!-- RIGHT: DEMO -->
-    <div>
-      <div class="demo-box">
-        <div class="demo-header">
-          <div class="tc-icon fs-icon" style="width:30px;height:30px;font-size:0.75rem;border-radius:8px">FS</div>
-          <h3>Request/Response Simulator — Live Demo</h3>
+    <!-- right: simulator -->
+    <div class="demo-col">
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <div class="tc-icon" style="color:var(--fs-c);border-color:rgba(52,211,153,0.3);width:32px;height:32px;font-size:0.7rem">FS</div>
+          <span class="demo-box-title">Full Stack Request Simulator</span>
           <span class="demo-badge">Interactive</span>
         </div>
         <div class="demo-area">
-          <p style="color:var(--text2);font-size:0.82rem;margin-bottom:1rem">Choose an API endpoint and method, then "send" the request to see what happens at each layer:</p>
+          <p style="color:var(--text2);font-size:0.8rem;margin-bottom:1rem">Choose a method and endpoint, hit Send, and watch the request move through each layer:</p>
 
-          <!-- Controls -->
-          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center">
-            <select id="methodSel" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.45rem 0.7rem;border-radius:8px;font-family:'Source Code Pro',monospace;font-size:0.82rem">
+          <div style="display:flex;gap:0.7rem;margin-bottom:1rem;flex-wrap:wrap">
+            <select id="verbPick" style="background:var(--bg3);border:1px solid var(--border);color:var(--fs-c);padding:0.5rem 0.8rem;font-family:var(--ff-mono);font-size:0.78rem;outline:none;cursor:pointer">
               <option>GET</option>
               <option>POST</option>
               <option>PUT</option>
               <option>DELETE</option>
             </select>
-            <select id="endpointSel" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.45rem 0.7rem;border-radius:8px;font-family:'Source Code Pro',monospace;font-size:0.82rem;flex:1">
+            <select id="routePick" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.5rem 0.8rem;font-family:var(--ff-mono);font-size:0.78rem;outline:none;cursor:pointer;flex:1">
               <option value="users">/api/users</option>
               <option value="posts">/api/posts</option>
               <option value="login">/api/auth/login</option>
               <option value="profile">/api/profile/1</option>
             </select>
-            <button onclick="simulateRequest()" style="background:var(--fs-c);color:#000;border:none;padding:0.48rem 1.1rem;border-radius:8px;font-weight:800;font-size:0.82rem;cursor:pointer;font-family:'Space Mono',monospace">▶ Send</button>
+            <button onclick="runSim()"
+              style="background:var(--fs-c);color:#070b0f;border:none;padding:0.5rem 1.2rem;font-family:var(--ff-mono);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s"
+              onmouseover="this.style.background='#5aebb0'" onmouseout="this.style.background='var(--fs-c)'">▶ Send</button>
           </div>
 
-          <!-- Flow display -->
-          <div id="flowDisplay" style="display:none">
-            <!-- Steps light up one by one -->
-            <div id="step-browser" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
-              <span style="font-size:1.2rem">🌐</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">Browser</div><div id="step-browser-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <span id="step-browser-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
-            </div>
-            <div id="step-network" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
-              <span style="font-size:1.2rem">📡</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">HTTP Request</div><div id="step-network-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <span id="step-network-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
-            </div>
-            <div id="step-server" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
-              <span style="font-size:1.2rem">⚙️</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">PHP Server</div><div id="step-server-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">PHP Server</div><div id="step-server-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <span id="step-server-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
-            </div>
-            <div id="step-db" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;opacity:0.35;transition:opacity 0.3s">
-              <span style="font-size:1.2rem">🗄</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">Database</div><div id="step-db-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <span id="step-db-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
-            </div>
-            <div id="step-response" class="flow-step" style="display:flex;align-items:center;gap:0.7rem;padding:0.7rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:0.9rem;opacity:0.35;transition:opacity 0.3s">
-              <span style="font-size:1.2rem">📦</span>
-              <div><div style="font-weight:700;font-size:0.82rem;color:var(--heading)">Response</div><div id="step-response-txt" style="font-size:0.76rem;color:var(--text2)">Waiting...</div></div>
-              <span id="step-response-badge" style="margin-left:auto;font-size:0.7rem;display:none;background:rgba(52,211,153,0.15);color:var(--fs-c);border:1px solid rgba(52,211,153,0.3);padding:0.1rem 0.45rem;border-radius:50px;font-weight:700">✓</span>
-            </div>
-
-            <!-- Final JSON response -->
-            <div id="jsonOutput" style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;font-family:'Source Code Pro',monospace;font-size:0.76rem;color:var(--text);display:none;line-height:1.7"></div>
+          <!-- pre-run placeholder -->
+          <div id="simHint" style="color:var(--text2);font-size:0.8rem;text-align:center;padding:2.5rem 0;border:1px dashed var(--border)">
+            Hit ▶ Send to simulate a request through the full stack.
           </div>
 
-          <div id="placeholderText" style="color:var(--text2);font-size:0.82rem;text-align:center;padding:2rem 0">
-            Click ▶ Send to simulate a request through the full stack.
+          <!-- step flow — shown after first run -->
+          <div id="simSteps" style="display:none">
+
+            <div id="s-browser" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:4px">
+              <span style="font-size:1.1rem">🌐</span>
+              <div><strong>Browser</strong><p id="s-browser-t">Waiting…</p></div>
+              <span id="s-browser-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
+            </div>
+
+            <div id="s-net" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:4px">
+              <span style="font-size:1.1rem">📡</span>
+              <div><strong>HTTP Request</strong><p id="s-net-t">Waiting…</p></div>
+              <span id="s-net-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
+            </div>
+
+            <div id="s-srv" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:4px">
+              <span style="font-size:1.1rem">⚙️</span>
+              <div><strong>PHP Server</strong><p id="s-srv-t">Waiting…</p></div>
+              <span id="s-srv-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
+            </div>
+
+            <div id="s-db" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:4px">
+              <span style="font-size:1.1rem">🗄</span>
+              <div><strong>Database</strong><p id="s-db-t">Waiting…</p></div>
+              <span id="s-db-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
+            </div>
+
+            <div id="s-resp" class="sf-step" style="opacity:0.3;transition:opacity 0.4s,border-color 0.4s;margin-bottom:1rem">
+              <span style="font-size:1.1rem">📦</span>
+              <div><strong>Response</strong><p id="s-resp-t">Waiting…</p></div>
+              <span id="s-resp-ok" style="display:none;margin-left:auto;font-size:0.65rem;color:var(--fs-c);border:1px solid var(--fs-c);padding:0.1rem 0.4rem">✓</span>
+            </div>
+
+            <!-- JSON output area — hidden until the sim finishes -->
+            <div id="jsonOut" style="background:var(--bg);border:1px solid var(--border);border-left:2px solid var(--fs-c);padding:1rem 1.2rem;font-family:var(--ff-mono);font-size:0.75rem;color:var(--text);display:none;line-height:1.8;white-space:pre"></div>
           </div>
         </div>
-        <div class="demo-explanation">
-          <strong>How it works:</strong> Each step lights up in sequence, simulating how a real HTTP request travels from the browser through the network, to the server, hits the database, and returns a JSON response.
+        <div class="demo-footer">
+          <strong>How it works:</strong> Each layer lights up with a timed delay to mimic real network + processing time. Uses <code>async/await</code> and the <code>delay()</code> helper from main.js to sequence the steps.
         </div>
       </div>
 
-      <!-- Tech stack badges -->
-      <div class="info-box" style="margin-top:1.2rem">
-        <h4>Popular Stacks</h4>
-        <ul>
-          <li><strong>MERN</strong> — MongoDB, Express, React, Node.js</li>
-          <li><strong>MEAN</strong> — MongoDB, Express, Angular, Node.js</li>
-          <li><strong>LAMP</strong> — Linux, Apache, MySQL, PHP</li>
-          <li><strong>JAMstack</strong> — JavaScript, APIs, Markup (serverless)</li>
-        </ul>
+      <!-- architecture layers -->
+      <div class="demo-box reveal">
+        <div class="demo-box-header">
+          <span class="demo-box-title">Architecture Layers</span>
+        </div>
+        <div class="demo-area">
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border)">
+            <div style="background:rgba(52,211,153,0.08);border-left:3px solid var(--fs-c);padding:1rem 1.2rem">
+              <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fs-c);margin-bottom:0.3rem">Presentation Layer</div>
+              <div style="font-size:0.82rem;color:var(--text2)">HTML · CSS · JavaScript · React</div>
+            </div>
+            <div style="background:rgba(79,156,249,0.06);border-left:3px solid var(--css-c);padding:1rem 1.2rem">
+              <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--css-c);margin-bottom:0.3rem">Application Layer</div>
+              <div style="font-size:0.82rem;color:var(--text2)">Node.js · PHP · Express · REST APIs</div>
+            </div>
+            <div style="background:rgba(167,139,250,0.06);border-left:3px solid var(--bs-c);padding:1rem 1.2rem">
+              <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bs-c);margin-bottom:0.3rem">Data Layer</div>
+              <div style="font-size:0.82rem;color:var(--text2)">MySQL · MongoDB · PostgreSQL</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</main>
 
-<!-- ===== FOOTER ===== -->
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="nav-logo">SU<span class="dot">.</span></div>
-      <p>Subash Upadhyaya — Full Stack Development Portfolio</p>
-    </div>
-    <div class="footer-right">
-      <p>📧 subashchalise064@gmail.com</p>
-      <p>📍 Chitwan, Nepal</p>
-    </div>
   </div>
-  <div class="footer-bottom"><p>© 2026 Subash Upadhyaya. All rights reserved.</p></div>
-</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">SU.</div>
+        <div class="footer-tagline">Subash Upadhyaya — Full Stack Development Portfolio</div>
+      </div>
+      <div class="footer-contact">
+        <p>📧 subashchalise064@gmail.com</p>
+        <p>📍 Chitwan, Nepal</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Subash Upadhyaya. All rights reserved.</div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
 <script>
-const fakeData = {
-  users:   { status: 200, data: [{ id: 1, name: "Subash Upadhyaya", role: "admin" }, { id: 2, name: "Karun Thapa", role: "user" }] },
-  posts:   { status: 200, data: [{ id: 1, title: "Learning Node.js", author: "Subash" }, { id: 2, title: "MERN Stack Guide", author: "Karun" }] },
-  login:   { status: 200, token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", message: "Login successful" },
-  profile: { status: 200, user: { id: 1, name: "Subash Upadhyaya", email: "subash@dev.com", joined: "2024-01-15" } }
-};
 
-function activateStep(id, text) {
-  const el = document.getElementById('step-' + id);
-  const txt = document.getElementById('step-' + id + '-txt');
-  const badge = document.getElementById('step-' + id + '-badge');
-  el.style.opacity = '1';
-  el.style.borderColor = 'var(--fs-c)';
-  txt.textContent = text;
-  setTimeout(() => { badge.style.display = 'inline'; }, 300);
-}
+  // mock API responses — one per endpoint
+  // these get displayed as the JSON output at the end of each sim run
+  var mockData = {
+    users:   { status: 200, data: [
+      { id: 1, name: 'Subash Upadhyaya', role: 'admin' },
+      { id: 2, name: 'Karun Thapa',      role: 'user'  }
+    ]},
+    posts:   { status: 200, data: [
+      { id: 1, title: 'Learning Node.js',   author: 'Subash' },
+      { id: 2, title: 'MERN Stack Guide',   author: 'Karun'  }
+    ]},
+    login:   { status: 200, token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', message: 'Login successful' },
+    profile: { status: 200, user: { id: 1, name: 'Subash Upadhyaya', email: 'subash@dev.com', joined: '2024-01-15' } }
+  };
 
-async function simulateRequest() {
-  const method = document.getElementById('methodSel').value;
-  const endpoint = document.getElementById('endpointSel').value;
-  const endpointPath = document.getElementById('endpointSel').options[document.getElementById('endpointSel').selectedIndex].value;
-  const path = '/api/' + (endpointPath === 'users' ? 'users' : endpointPath === 'posts' ? 'posts' : endpointPath === 'login' ? 'auth/login' : 'profile/1');
+  // light up one step in the flow and show its checkmark a moment later
+  function activateStep(id, msg) {
+    var row   = document.getElementById('s-' + id);
+    var para  = document.getElementById('s-' + id + '-t');
+    var check = document.getElementById('s-' + id + '-ok');
 
-  // Reset
-  document.getElementById('placeholderText').style.display = 'none';
-  document.getElementById('flowDisplay').style.display = 'block';
-  document.getElementById('jsonOutput').style.display = 'none';
-  ['browser','network','server','db','response'].forEach(id => {
-    const el = document.getElementById('step-' + id);
-    const badge = document.getElementById('step-' + id + '-badge');
-    el.style.opacity = '0.35'; el.style.borderColor = 'var(--border)';
-    badge.style.display = 'none';
-    document.getElementById('step-' + id + '-txt').textContent = 'Waiting...';
-  });
+    row.style.opacity     = '1';
+    row.style.borderColor = 'var(--fs-c)';
+    para.textContent      = msg;
+    setTimeout(function () { check.style.display = 'inline'; }, 280);
+  }
 
-  await delay(200); activateStep('browser', `User triggered ${method} ${path}`);
-  await delay(600); activateStep('network', `Sending ${method} ${path} via HTTP`);
-  await delay(700); activateStep('server', `Express router matched ${method} ${path}`);
-  await delay(700); activateStep('db', method === 'GET' ? 'Querying collection...' : method === 'POST' ? 'Inserting document...' : method === 'DELETE' ? 'Removing document...' : 'Updating document...');
-  await delay(600); activateStep('response', `Returning JSON with status 200`);
-  await delay(300);
-  const result = fakeData[endpointPath] || { status: 200, message: "OK" };
-  const json = JSON.stringify(result, null, 2)
-    .replace(/"([^"]+)":/g, '<span style="color:#79c0ff">"$1"</span>:')
-    .replace(/: "([^"]+)"/g, ': <span style="color:#a5d6ff">"$1"</span>')
-    .replace(/: (\d+)/g, ': <span style="color:#f78c6c">$1</span>');
-  document.getElementById('jsonOutput').innerHTML = json;
-  document.getElementById('jsonOutput').style.display = 'block';
-}
+  // dim all steps back to starting state
+  function resetSteps() {
+    ['browser', 'net', 'srv', 'db', 'resp'].forEach(function (id) {
+      var row   = document.getElementById('s-' + id);
+      var para  = document.getElementById('s-' + id + '-t');
+      var check = document.getElementById('s-' + id + '-ok');
+      row.style.opacity     = '0.3';
+      row.style.borderColor = 'var(--border)';
+      para.textContent      = 'Waiting…';
+      check.style.display   = 'none';
+    });
+  }
 
-function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+  // main sim — async so we can await the delays between steps
+  async function runSim() {
+    var verb  = document.getElementById('verbPick').value;
+    var key   = document.getElementById('routePick').value;
+
+    var pathMap = {
+      users:   '/api/users',
+      posts:   '/api/posts',
+      login:   '/api/auth/login',
+      profile: '/api/profile/1'
+    };
+    var path = pathMap[key];
+
+    // hide placeholder, show step flow
+    document.getElementById('simHint').style.display  = 'none';
+    document.getElementById('simSteps').style.display = 'block';
+    document.getElementById('jsonOut').style.display  = 'none';
+
+    resetSteps();
+
+    // sequence each layer with realistic-ish delays
+    await delay(200);  activateStep('browser', verb + ' ' + path + ' triggered');
+    await delay(550);  activateStep('net',     'Sending ' + verb + ' ' + path + ' over HTTP');
+    await delay(650);  activateStep('srv',     'Route matched — processing request');
+
+    // vary the database message slightly based on what the verb implies
+    var dbMsg = verb === 'GET'    ? 'Running SELECT query…'
+              : verb === 'POST'   ? 'Inserting new record…'
+              : verb === 'PUT'    ? 'Updating record…'
+              :                     'Deleting record…';
+    await delay(700);  activateStep('db',   dbMsg);
+    await delay(600);  activateStep('resp', 'Sending JSON response · 200 OK');
+
+    // display syntax-highlighted JSON
+    await delay(250);
+    var payload = mockData[key] || { status: 200, ok: true };
+    var pretty  = JSON.stringify(payload, null, 2)
+      .replace(/"([^"]+)":/g,  '<span style="color:#79c0ff">"$1"</span>:')
+      .replace(/: "([^"]+)"/g, ': <span style="color:#c3e88d">"$1"</span>')
+      .replace(/: (\d+)/g,     ': <span style="color:#f78c6c">$1</span>');
+
+    var out = document.getElementById('jsonOut');
+    out.style.display = 'block';
+    out.innerHTML     = pretty;
+  }
+
 </script>
 </body>
 </html>
