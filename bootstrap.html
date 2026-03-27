@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bootstrap | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <div class="main-wrap">
 
   <section class="page-hero">
@@ -24,7 +22,6 @@
 
   <div class="topic-body">
 
-    <!-- left: written content -->
     <div class="content-col">
       <h2>What is Bootstrap?</h2>
       <p>Bootstrap is a free, open-source CSS framework — originally built at Twitter, now independent. The idea is to solve the boring, repetitive parts of web UI so you can focus on the actual design decisions.</p>
@@ -65,7 +62,6 @@
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Left<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>Right<span class="tag">&lt;/div&gt;</span>
 
-    <span class="comment">&lt;!-- equal thirds on lg — good for feature/service cards --&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 1<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 2<span class="tag">&lt;/div&gt;</span>
     <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-lg-4"</span><span class="tag">&gt;</span>Card 3<span class="tag">&lt;/div&gt;</span>
@@ -77,7 +73,6 @@
 <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex justify-content-center gap-3 mt-4"</span><span class="tag">&gt;</span>
   <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-primary"</span><span class="tag">&gt;</span>Primary<span class="tag">&lt;/button&gt;</span>
   <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-outline-secondary"</span><span class="tag">&gt;</span>Outline<span class="tag">&lt;/button&gt;</span>
-<span class="tag">&lt;/div&gt;</span></div>
 
       <h3>Why Use It?</h3>
       <div class="info-box reveal">
@@ -92,7 +87,6 @@
       </div>
     </div>
 
-    <!-- right: interactive demo -->
     <div class="demo-col">
       <div class="demo-box reveal">
         <div class="demo-box-header">
@@ -102,8 +96,6 @@
         </div>
         <div class="demo-area">
           <p style="color:var(--text2);font-size:0.8rem;margin-bottom:1rem">Click a layout preset to see how the 12 columns get divided up:</p>
-
-          <!-- preset buttons -->
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
             <button class="js-btn" onclick="applyLayout([12])" style="color:var(--bs-c)">12</button>
             <button class="js-btn" onclick="applyLayout([6,6])">6+6</button>
@@ -114,20 +106,15 @@
             <button class="js-btn" onclick="applyLayout([2,2,2,2,2,2])">2×6</button>
             <button class="js-btn" onclick="applyLayout([5,7])">5+7</button>
           </div>
-
-          <!-- 12 individual column markers — always visible as reference -->
           <div class="bs-grid-demo" id="colTrack">
             <div class="bs-col">1</div><div class="bs-col">2</div><div class="bs-col">3</div>
             <div class="bs-col">4</div><div class="bs-col">5</div><div class="bs-col">6</div>
             <div class="bs-col">7</div><div class="bs-col">8</div><div class="bs-col">9</div>
             <div class="bs-col">10</div><div class="bs-col">11</div><div class="bs-col">12</div>
           </div>
-
-          <!-- live layout preview — rebuilt on every button click -->
           <div id="layoutView" style="display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:8px">
             <div style="grid-column:span 12;background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);padding:1rem;text-align:center;font-size:0.75rem;color:var(--bs-c);font-weight:500">col-12</div>
           </div>
-
           <p id="layoutNote" style="color:var(--text2);font-size:0.72rem;margin-top:0.8rem;font-family:var(--ff-mono)">
             class="col-12" — uses all 12 columns (full width)
           </p>
@@ -137,7 +124,6 @@
         </div>
       </div>
 
-      <!-- breakpoints reference -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <span class="demo-box-title">Breakpoints Reference</span>
@@ -172,7 +158,6 @@
           </div>
         </div>
       </div>
-    </div>
 
   </div>
 
@@ -180,10 +165,8 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
-        <div class="footer-tagline">Subash Upadhyaya — Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
-        <p>📧 subashchalise064@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -191,44 +174,9 @@
   </footer>
 
 </div>
-
 <script src="main.js"></script>
 <script>
 
-  // different opacity levels so adjacent columns look distinct
-  var shades = [
-    'rgba(167,139,250,0.18)',
-    'rgba(167,139,250,0.26)',
-    'rgba(167,139,250,0.12)',
-    'rgba(167,139,250,0.22)',
-  ];
-
-  // rebuild the layout preview to match the chosen column split
-  function applyLayout(colWidths) {
-    var view = document.getElementById('layoutView');
-    view.innerHTML = '';  // wipe previous layout
-
-    colWidths.forEach(function (w, idx) {
-      var cell = document.createElement('div');
-      cell.style.cssText =
-        'grid-column: span ' + w + ';' +
-        'background: ' + shades[idx % shades.length] + ';' +
-        'border: 1px solid rgba(167,139,250,0.3);' +
-        'padding: 1rem 0.5rem;' +
-        'text-align: center;' +
-        'font-size: 0.72rem;' +
-        'color: var(--bs-c);' +
-        'font-weight: 500;' +
-        'transition: background 0.3s';
-      cell.textContent = 'col-' + w;
-      view.appendChild(cell);
-    });
-
-    // show the Bootstrap class string below the preview
-    var used  = colWidths.reduce(function (sum, n) { return sum + n; }, 0);
-    var names = colWidths.map(function (w) { return 'col-' + w; }).join(' + ');
-    document.getElementById('layoutNote').textContent =
-      names + ' — ' + used + '/12 columns used';
   }
 
 </script>

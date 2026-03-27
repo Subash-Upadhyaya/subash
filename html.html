@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HTML | Subash Upadhyaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <div class="main-wrap">
 
   <section class="page-hero">
@@ -24,7 +22,6 @@
 
   <div class="topic-body">
 
-    <!-- left: explanation + code -->
     <div class="content-col">
       <h2>What is HTML?</h2>
       <p>HTML (HyperText Markup Language) tells the browser what to put on the page and what it <em>means</em>. Not how it looks — that's CSS — just what the content actually is. A heading, a paragraph, a link, an image.</p>
@@ -61,28 +58,20 @@
 <span class="tag">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"en"</span><span class="tag">&gt;</span>
 <span class="tag">&lt;head&gt;</span>
-  <span class="comment">&lt;!-- metadata — not visible to users but read by browsers and bots --&gt;</span>
   <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">/&gt;</span>
   <span class="tag">&lt;title&gt;</span>My Page<span class="tag">&lt;/title&gt;</span>
   <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"style.css"</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/head&gt;</span>
 <span class="tag">&lt;body&gt;</span>
-  <span class="comment">&lt;!-- semantic layout:
-       header  → logo, navigation
-       main    → the primary content
-       footer  → contact, copyright
-  --&gt;</span>
   <span class="tag">&lt;header&gt;</span>
     <span class="tag">&lt;nav&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"/"</span><span class="tag">&gt;</span>Home<span class="tag">&lt;/a&gt;&lt;/nav&gt;</span>
   <span class="tag">&lt;/header&gt;</span>
   <span class="tag">&lt;main&gt;</span>
     <span class="tag">&lt;h1&gt;</span>Hello World!<span class="tag">&lt;/h1&gt;</span>
     <span class="tag">&lt;p&gt;</span>A paragraph of content.<span class="tag">&lt;/p&gt;</span>
-    <span class="comment">&lt;!-- alt text: required for accessibility and SEO --&gt;</span>
     <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"photo.jpg"</span> <span class="attr">alt</span>=<span class="val">"Description here"</span><span class="tag">/&gt;</span>
   <span class="tag">&lt;/main&gt;</span>
 <span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span></div>
 
       <h3>Quick Reference</h3>
       <div class="info-box reveal">
@@ -91,7 +80,6 @@
           <li><strong>&lt;h1&gt;–&lt;h6&gt;</strong> — Headings, most to least important. Only one &lt;h1&gt; per page ideally.</li>
           <li><strong>&lt;p&gt;</strong> — Paragraph. Gets display:block and margin by default.</li>
           <li><strong>&lt;a href=""&gt;</strong> — Hyperlink. href="" goes nowhere, # scrolls to top, external needs the full URL.</li>
-          <li><strong>&lt;img src="" alt=""&gt;</strong> — Image. alt is required — skip it and screen readers have nothing to say.</li>
           <li><strong>&lt;ul&gt; / &lt;ol&gt;</strong> — Bullet list / numbered list. Items go inside &lt;li&gt; tags.</li>
           <li><strong>&lt;div&gt; / &lt;span&gt;</strong> — Generic containers with no semantic meaning. div is block, span is inline.</li>
           <li><strong>&lt;form&gt;, &lt;input&gt;, &lt;button&gt;</strong> — User input. Always label your inputs.</li>
@@ -100,30 +88,19 @@
       </div>
     </div>
 
-    <!-- right: interactive demo -->
     <div class="demo-col">
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <div class="tc-icon" style="color:var(--html-c);border-color:rgba(255,107,53,0.3);width:32px;height:32px;font-size:0.72rem">&lt;/&gt;</div>
-          <span class="demo-box-title">HTML Tag Builder — Live</span>
           <span class="demo-badge">Interactive</span>
         </div>
         <div class="demo-area">
           <p style="color:var(--text2);font-size:0.8rem;margin-bottom:0.8rem">Click buttons to insert real elements and watch the DOM update:</p>
-
-          <!-- live preview area -->
           <div class="html-preview" id="liveArea">
             <span style="color:var(--text2);font-style:italic;font-size:0.82rem">Elements will appear here once you click a button…</span>
           </div>
-
-          <!-- tag buttons -->
           <div>
-            <button class="tag-btn" onclick="insertTag('h1', 'Hello World!')">+ &lt;h1&gt;</button>
-            <button class="tag-btn" onclick="insertTag('h3', 'A Sub-Heading')">+ &lt;h3&gt;</button>
-            <button class="tag-btn" onclick="insertTag('p',  'A paragraph of text. HTML gives it meaning in the document structure.')">+ &lt;p&gt;</button>
             <button class="tag-btn" onclick="insertLink()">+ &lt;a&gt; Link</button>
-            <button class="tag-btn" onclick="insertTag('ul', '<li>First item</li><li>Second item</li><li>Third item</li>')">+ &lt;ul&gt;</button>
-            <button class="tag-btn" onclick="insertTag('blockquote', '&ldquo;The web is for everyone.&rdquo; — Tim Berners-Lee')">+ &lt;blockquote&gt;</button>
             <button class="tag-btn" onclick="insertForm()">+ &lt;form&gt;</button>
             <button class="tag-btn" onclick="insertRule()">+ &lt;hr&gt;</button>
             <button class="clear-btn" onclick="resetArea()">⟳ Clear</button>
@@ -134,7 +111,6 @@
         </div>
       </div>
 
-      <!-- semantic structure diagram -->
       <div class="demo-box reveal">
         <div class="demo-box-header">
           <span class="demo-box-title">Semantic Page Layout</span>
@@ -153,7 +129,6 @@
           </div>
         </div>
       </div>
-    </div>
 
   </div>
 
@@ -161,10 +136,8 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo">SU.</div>
-        <div class="footer-tagline">Subash Upadhyaya — Full Stack Development Portfolio</div>
       </div>
       <div class="footer-contact">
-        <p>📧 subashchalise064@gmail.com</p>
         <p>📍 Chitwan, Nepal</p>
       </div>
     </div>
@@ -172,74 +145,21 @@
   </footer>
 
 </div>
-
 <script src="main.js"></script>
 <script>
 
-  // track whether the preview is currently empty
-  // so we know when to clear the placeholder text before adding the first element
-  var previewIsEmpty = true;
 
-  function getArea() {
-    return document.getElementById('liveArea');
+
+
+
   }
 
-  function clearPlaceholder() {
-    if (!previewIsEmpty) return;
-    getArea().innerHTML = '';
-    previewIsEmpty = false;
   }
 
-  // create and append any standard tag
-  function insertTag(tagName, html) {
-    clearPlaceholder();
-    var el      = document.createElement(tagName);
-    el.innerHTML = html;
-    getArea().appendChild(el);
   }
 
-  // links need a bit of extra styling so they're visible
-  function insertLink() {
-    clearPlaceholder();
-    var a = document.createElement('a');
-    a.href        = '#';
-    a.textContent = '🔗 This is a hyperlink — click me!';
-    a.style.cssText = 'color:var(--html-c);display:block;margin:4px 0;text-decoration:underline';
-    getArea().appendChild(a);
-  }
-
-  // horizontal rule — just a styled divider line
-  function insertRule() {
-    clearPlaceholder();
-    var hr = document.createElement('hr');
-    hr.style.cssText = 'border:none;border-top:2px solid var(--html-c);margin:8px 0';
-    getArea().appendChild(hr);
-  }
-
-  // simple form with an input and button — shows how form elements render
-  function insertForm() {
-    clearPlaceholder();
-    var wrapper = document.createElement('div');
-    wrapper.innerHTML =
-      '<div style="border:1px solid var(--border);padding:10px;display:inline-block;border-radius:4px">' +
-        '<label style="display:block;font-size:0.82rem;margin-bottom:4px">Your name:</label>' +
-        '<input type="text" placeholder="Type here…" ' +
-          'style="border:1px solid var(--border);background:var(--bg);color:var(--text);padding:4px 8px;font-size:0.82rem"/>' +
-        '<button style="margin-left:6px;background:var(--html-c);color:#fff;border:none;' +
-          'padding:4px 10px;cursor:pointer;font-size:0.82rem">Submit</button>' +
-      '</div>';
-    getArea().appendChild(wrapper);
-  }
-
-  // reset to empty state with placeholder text
-  function resetArea() {
-    getArea().innerHTML =
-      '<span style="color:var(--text2);font-style:italic;font-size:0.82rem">' +
-      'Elements will appear here once you click a button…</span>';
-    previewIsEmpty = true;
   }
 
 </script>
 </body>
 </html>
-
